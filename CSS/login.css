@@ -92,7 +92,7 @@
   }
   
   
-  .mytra-login button{
+  .mytra-login form button{
     border:none;
     outline:none;
     margin-top:40px;
@@ -101,26 +101,30 @@
     cursor:pointer;
   }
   
-  .mytra-login .login{
+  .mytra-login form .login{
     width:60%;
     color:#fff;
     background:#E72744;
   }
   
-  .mytra-login .login:hover{
+  h5{
+    color: red;
+  }
+  
+  .mytra-login form .login:hover{
     background:#fff;
     color:#E72744;
     box-shadow:0 0 10px #ccc;
   }
   
-  .mytra-login .signup{
+  .mytra-login form .signup{
     width:38.5%;
     color:#E72744;
     background:#fff;
     box-shadow:0 0 10px #ccc;
   }
   
-  .mytra-login .signup:hover{
+  .mytra-login form .signup:hover{
     background:#e72744;
     color:#fff;
   }
@@ -144,7 +148,7 @@
       display:none;
     }
     
-    .mytra-login .signup{
+    .mytra-login form .signup{
     width:38%;
     }
     
