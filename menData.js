@@ -1,6 +1,5 @@
 const container=document.querySelector(".product_container");
 const product_card=document.querySelector(".product_card");
-
 let mensData=[
     {
         name:"Men  Round Neck T-shirt",
@@ -141,17 +140,32 @@ let mensData=[
 },
 
 {
-    name:"U.S. Polo Assn. Men Blue & White Tailored Fit Self-Design Formal Shirt",
+    name:"Peter England Men Formal Shirt",
     category:"Shirts",
+    img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/2481947/2018/2/26/11519650028346-Peter-England-Men-Green-Regular-Fit-Self-Design-Formal-Shirt-5391519650028136-1.jpg",
+    price:999,
+    color:"Green",
+    gender:"Men",
+    brand:"Peter England",
+    fabric:"70% Cotton 30% Mix-blend",
+    discount:40,
 
-}
+},
+{
+    name:"Peter England Men Purple Shirt",
+    category:"Shirts",
+    img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/2481823/2018/6/27/7bc59ee0-e79c-4205-8473-159f50b37eff1530099540110-Peter-England-Men-Shirts-1831530099539931-1.jpg",
+    price:1099,
+    color:"Purple",
+    gender:"Men",
+    brand:"Peter England",
+    fabric:"70% Cotton 30% Mix-blend",
+    discount:16,
+
+},
+
  ]
-
-
-
-
-
-    mensData.forEach((val)=>{
+mensData.forEach((val)=>{
         const card=document.createElement("div");
         const image=document.createElement("img");
         const brand=document.createElement("p");
@@ -160,7 +174,11 @@ let mensData=[
         const price=document.createElement("span");
         const strikePrice=document.createElement("span");
         const discount=document.createElement("span");
-
+        const wishList=document.createElement("button");
+    
+        wishList.style.display="none";
+        wishList.textContent="Wish List";
+        wishList.classList.add("wishList");
         card.setAttribute("class", "product_card");
         image.setAttribute("src",val.img_url);
         name.textContent=val.name;
@@ -168,23 +186,22 @@ let mensData=[
         brand.textContent=val.brand;
         strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
         discount.textContent=`(${val.discount} % OFF)`;
+        
         priceDiv.append(price,strikePrice,discount);
-        card.append(image,brand,name,priceDiv);
+        card.append(image,wishList,brand,name,priceDiv);
         container.append(card);
-
-        const checkBoxClr=document.querySelectorAll(".checkbox"); 
-        let selectedColor="all";
-        let flagClr=true;
        
+        const checkBoxClr=document.querySelectorAll(".checkbox"); 
+        let selectedColor="all";       
         checkBoxClr.forEach(checkbox => {
         checkbox.addEventListener('change', function(){
-         selectedColor=checkbox.value;
+        selectedColor=checkbox.value;
+
         // console.log(selectedColor);
-        if(selectedColor.toLowerCase()==val.color.toLowerCase()){
+        if(checkbox.checked && selectedColor.toLowerCase()==val.color.toLowerCase()){
           container.append(card);
-          checkbox.setAttribute.disabled=true;
         }
-        else if(!flagClr){
+        else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
             // checkBoxClr.setAttribute.disabled=false;
@@ -193,37 +210,32 @@ let mensData=[
         else {
             container.removeChild(card);
         }
-        flagClr=!flagClr;
-
-        });
+         console.log(selectedColor)
         });
 
-
-        const checkBoxBrand=document.querySelectorAll("#brandChk"); 
-        let selectedBrand="all";
-        let flagBrn=true;
-        checkBoxBrand.forEach(checkbox => {
-            checkbox.addEventListener('change', function(){
-            selectedBrand=checkbox.value;
+        });
+       
+            });
+            function ckChange(ckType) {
+                var checkboxes = document.querySelectorAll('[name="color"]');
+                
+                checkboxes.forEach(function (checkbox) {
+                  if (!ckType.checked) {
+                    checkbox.disabled = false;
+                  } else {
+                    if (!checkbox.checked) {
+                      checkbox.disabled = true;
+                    } else {
+                      checkbox.disabled = false;
+                    }
+                  }
+                 }
+               
+                )};
            
-            if(selectedBrand.toLowerCase()==val.brand.toLowerCase()){
-              container.append(card);
-              checkbox.setAttribute.disabled=true;
-            }
-
-            else if(!flagBrn){
-                console.log("Please select a color");
-                container.append(card);
-                // checkBoxClr.setAttribute.disabled=false;
-    
-            }
-            else {
-                container.removeChild(card);
-            }
-            flagBrn=!flagBrn;
-    
-            });
-            });
+  
+            
         // container.append(card);
         // console.log(selectedColor);
-    })
+
+
