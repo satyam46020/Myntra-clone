@@ -34,17 +34,74 @@
             <option value="Shirts">Shirts</option>
           </select>
         </div>
+        <!-- 
+         
+            <option value="Allen Solly">Allen Solly</option>
+          </select>
+        </div> -->
         <div class="brands">
           <h4>BRANDS</h4>
 
-          <select id="brandChk" name="brandChk">
-            <option value="">All</option>
-            <option value="Roadster">Roadster</option>
-            <option value="ADIDAS">ADIDAS</option>
-            <option value="U.S. Polo Assn.">U.S. Polo Assn.</option>
-            <option value="DILLINGER">DILLINGER</option>
-            <option value="Allen Solly">Allen Solly</option>
-          </select>
+          <div>
+            <input
+              type="checkbox"
+              value="Roadster"
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="Roadster">Roadster</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="DILLINGER"
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="DILLINGER">DILLINGER</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="U.S. Polo Assn."
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="U.S. Polo Assn.">U.S. Polo Assn.</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="Allen Solly"
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="Allen Solly">Allen Solly</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="ADIDAS"
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="ADIDAS">ADIDAS</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="PETER ENGLAND"
+              name="brand"
+              onClick="ckBrand(this)"
+              class="brandChk"
+            />
+            <label for="PETER ENGLAND">PETER ENGLAND</label>
+          </div>
         </div>
         <div class="colors">
           <h4>COLORS</h4>
@@ -159,16 +216,34 @@
           <h4>NECK TYPE</h4>
 
           <div>
-            <input type="checkbox" value="Round" />
-            <label for="Blue">Round Neck</label>
+            <input
+              type="checkbox"
+              value="Round"
+              name="collar"
+              onClick="ckCollar(this)"
+              class="collarChk"
+            />
+            <label for="Round">Round Neck</label>
           </div>
           <div>
-            <input type="checkbox" value="Collar" />
+            <input
+              type="checkbox"
+              value="Collar"
+              name="collar"
+              onClick="ckCollar(this)"
+              class="collarChk"
+            />
             <label for="Collar">Collar</label>
           </div>
           <div>
-            <input type="checkbox" value="Henley" />
-            <label for="Collar">Henley</label>
+            <input
+              type="checkbox"
+              value="Henley"
+              name="collar"
+              class="collarChk"
+              onClick="ckCollar(this)"
+            />
+            <label for="Henley">Henley</label>
           </div>
         </div>
       </div>

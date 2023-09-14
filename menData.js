@@ -91,7 +91,7 @@ let mensData=[
              img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7766756/2018/11/28/fcacc652-f449-476f-89c0-1450d17ffc9c1543388471585-Calvin-Klein-Jeans-Men-Tshirts-5621543388470189-1.jpg",
                 color:"White",
                 gender:"Men",
-                neck:"Collar",
+                neck:"Round",
                 brand:"U.S. Polo Assn.",
                 fabric:"100% cotton",
                 discount:12,
@@ -118,7 +118,7 @@ let mensData=[
 
     color:"Blue",
     gender:"Men",
-    neck:"Round Neck",
+    neck:"Round",
     brand:"Lacoste",
     fabric:"100% Cotton",
     discount:5,
@@ -132,7 +132,7 @@ let mensData=[
     price:4999,
     color:"Orange",
     gender:"Men",
-    neck:"Round Neck",
+    neck:"Round",
     brand:"Levis",
     fabric:"70% Cotton 30% Mix-blend",
     discount:14,
@@ -149,6 +149,7 @@ let mensData=[
     brand:"Peter England",
     fabric:"70% Cotton 30% Mix-blend",
     discount:40,
+    collar:"Collar",
 
 },
 {
@@ -161,6 +162,8 @@ let mensData=[
     brand:"Peter England",
     fabric:"70% Cotton 30% Mix-blend",
     discount:16,
+    collar:"Collar",
+
 
 },
 
@@ -191,7 +194,48 @@ mensData.forEach((val)=>{
         card.append(image,wishList,brand,name,priceDiv);
         container.append(card);
        
-        const checkBoxClr=document.querySelectorAll(".checkbox"); 
+        filterColor(val,container,card);
+        filterCollar(val,container,card);
+
+});
+function ckChange(ckType) {
+                var checkboxes = document.querySelectorAll('[name="color"]');
+                
+                checkboxes.forEach(function (checkbox) {
+                  if (!ckType.checked) {
+                    checkbox.disabled = false;
+                  } else {
+                    if (!checkbox.checked) {
+                      checkbox.disabled = true;
+                    } else {
+                      checkbox.disabled = false;
+                    }
+                  }
+                 }
+               
+)};
+function ckCollar(ckType) {
+var checkboxes = document.querySelectorAll('[name="collar"]');
+checkboxes.forEach(function (checkbox) {
+if (!ckType.checked) {
+  checkbox.disabled = false;
+                  } else {
+                    if (!checkbox.checked) {
+                      checkbox.disabled = true;
+                    } else {
+                      checkbox.disabled = false;
+                    }
+                  }
+                 }
+               
+            )};
+            
+           
+
+
+
+function filterColor(val,container,card){
+    const checkBoxClr=document.querySelectorAll(".checkbox"); 
         let selectedColor="all";       
         checkBoxClr.forEach(checkbox => {
         checkbox.addEventListener('change', function(){
@@ -214,28 +258,29 @@ mensData.forEach((val)=>{
         });
 
         });
-       
-            });
-            function ckChange(ckType) {
-                var checkboxes = document.querySelectorAll('[name="color"]');
-                
-                checkboxes.forEach(function (checkbox) {
-                  if (!ckType.checked) {
-                    checkbox.disabled = false;
-                  } else {
-                    if (!checkbox.checked) {
-                      checkbox.disabled = true;
-                    } else {
-                      checkbox.disabled = false;
-                    }
-                  }
-                 }
-               
-                )};
-           
-  
-            
-        // container.append(card);
+}
+function filterCollar(val,container,card){
+    const checkBoxClr=document.querySelectorAll(".collarChk"); 
+        let selectedColor="all";       
+        checkBoxClr.forEach(checkbox => {
+        checkbox.addEventListener('change', function(){
+        selectedColor=checkbox.value;
+
         // console.log(selectedColor);
+        if(checkbox.checked && selectedColor.toLowerCase()==val.neck.toLowerCase()){
+          container.append(card);
+        }
+        else if(!checkbox.checked){
+            console.log("Please select a color");
+            container.append(card);
+            // checkBoxClr.setAttribute.disabled=false;
 
+        }
+        else {
+            container.removeChild(card);
+        }
+         console.log(selectedColor)
+        });
 
+        });
+}
