@@ -248,7 +248,7 @@ function ckBrand(ckType) {
                    
 )};  
 function ckCategories(ckType) {
-        var checkboxes = document.querySelectorAll('[name="categories"]');
+        let checkboxes = document.querySelectorAll('[name="categories"]');
         checkboxes.forEach(function (checkbox) {
         if (!ckType.checked) {
           checkbox.disabled = false;

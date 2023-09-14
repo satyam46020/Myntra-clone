@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="horizontal_container">
+      <a href="./home.page">Home</a>
+      <span>/</span>
+      <a><b>Women</b></a>
+      <p><span>Kurtis for </span>Women :<span>1234 items</span></p>
+      <div class="flx-jsp-ac">
+        <h3>Filters</h3>
+        <div class="flx-jsp-ac" id="select_opt">
+          <select>
+            <option value="">Fabric</option>
+          </select>
+          <select>
+            <option value="">Bundle</option>
+          </select>
+          <select>
+            <option value="">Size</option>
+          </select>
+        </div>
+        <select id="sort">
+          <option value="">Sort By</option>
+          <option value="discount">Better Discount</option>
+          <option value="high">High To Low</option>
+          <option value="Low">Low To High</option>
+        </select>
+      </div>
+    </div>
     <div class="product_page">
       <div class="functionality">
         <h3>Filters</h3>
@@ -208,7 +234,7 @@
             />
             <div
               class="clrBtn checkbox"
-              id="SeaGreen"
+              id="Green"
               onClick="ckChange(this)"
             ></div>
             <label for="Green">Green</label>
