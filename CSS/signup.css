@@ -82,24 +82,24 @@ h5{
 .mytra-signup form .signup {
     width: 60%;
     color: #fff;
-    background: #E72744;
+    background: rgb(238, 0, 119);
 }
 
 .mytra-signup form .signup:hover {
     background: #fff;
-    color: #E72744;
+    color: rgb(238, 0, 119);
     box-shadow: 0 0 10px #ccc;
 }
 
 .mytra-signup form .login {
     width: 38.5%;
-    color: #E72744;
+    color: rgb(238, 0, 119);
     background: #fff;
     box-shadow: 0 0 10px #ccc;
 }
 
 .mytra-signup form .login:hover {
-    background: #e72744;
+    background: rgb(238, 0, 119);
     color: #fff;
 }
 
