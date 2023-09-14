@@ -196,6 +196,9 @@ mensData.forEach((val)=>{
        
         filterColor(val,container,card);
         filterCollar(val,container,card);
+        filterBrand(val,container,card);
+        filterCategory(val,container,card);
+        
 
 });
 function ckChange(ckType) {
@@ -228,8 +231,37 @@ if (!ckType.checked) {
                   }
                  }
                
-            )};
-            
+)};
+function ckBrand(ckType) {
+    var checkboxes = document.querySelectorAll('[name="brand"]');
+    checkboxes.forEach(function (checkbox) {
+    if (!ckType.checked) {
+      checkbox.disabled = false;
+                      } else {
+                        if (!checkbox.checked) {
+                          checkbox.disabled = true;
+                        } else {
+                          checkbox.disabled = false;
+                        }
+                      }
+                     }
+                   
+)};  
+function ckCategories(ckType) {
+        var checkboxes = document.querySelectorAll('[name="categories"]');
+        checkboxes.forEach(function (checkbox) {
+        if (!ckType.checked) {
+          checkbox.disabled = false;
+                          } else {
+                            if (!checkbox.checked) {
+                              checkbox.disabled = true;
+                            } else {
+                              checkbox.disabled = false;
+                            }
+                          }
+                         }
+                       
+)};       
            
 
 
@@ -268,6 +300,56 @@ function filterCollar(val,container,card){
 
         // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.neck.toLowerCase()){
+          container.append(card);
+        }
+        else if(!checkbox.checked){
+            console.log("Please select a color");
+            container.append(card);
+            // checkBoxClr.setAttribute.disabled=false;
+
+        }
+        else {
+            container.removeChild(card);
+        }
+         console.log(selectedColor)
+        });
+
+        });
+}
+function filterBrand(val,container,card){
+    const checkBoxClr=document.querySelectorAll(".brandChk"); 
+        let selectedColor="all";       
+        checkBoxClr.forEach(checkbox => {
+        checkbox.addEventListener('change', function(){
+        selectedColor=checkbox.value;
+
+        // console.log(selectedColor);
+        if(checkbox.checked && selectedColor.toLowerCase()==val.brand.toLowerCase()){
+          container.append(card);
+        }
+        else if(!checkbox.checked){
+            console.log("Please select a color");
+            container.append(card);
+            // checkBoxClr.setAttribute.disabled=false;
+
+        }
+        else {
+            container.removeChild(card);
+        }
+         console.log(selectedColor)
+        });
+
+        });
+}
+function filterCategory(val,container,card){
+    const checkBoxClr=document.querySelectorAll(".categoriesChk"); 
+        let selectedColor="all";       
+        checkBoxClr.forEach(checkbox => {
+        checkbox.addEventListener('change', function(){
+        selectedColor=checkbox.value;
+
+        // console.log(selectedColor);
+        if(checkbox.checked && selectedColor.toLowerCase()==val.category.toLowerCase()){
           container.append(card);
         }
         else if(!checkbox.checked){
