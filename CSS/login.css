@@ -87,7 +87,7 @@
   
   
   .mytra-login form .forgot a{
-    color:rgb(238, 0, 119);
+    color:rgb(255, 63, 108);
     cursor:pointer;
   }
   
@@ -104,7 +104,7 @@
   .mytra-login form .login{
     width:60%;
     color:#fff;
-    background:rgb(238, 0, 119);
+    background:rgb(255, 63, 108);
   }
   
   h5{
@@ -113,19 +113,19 @@
 
   .mytra-login form .login:hover{
     background:#fff;
-    color:rgb(238, 0, 119);
+    color:rgb(255, 63, 108);
     box-shadow:0 0 10px #ccc;
   }
   
   .mytra-login form .signup{
     width:38.5%;
-    color:rgb(238, 0, 119);
+    color:rgb(255, 63, 108);
     background:#fff;
     box-shadow:0 0 10px #ccc;
   }
   
   .mytra-login form .signup:hover{
-    background:rgb(238, 0, 119);
+    background:rgb(255, 63, 108);
     color:#fff;
   }
   

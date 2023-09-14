@@ -100,7 +100,6 @@ body{
 }
 #offer>div{
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     
 }
@@ -333,7 +332,6 @@ body{
 #coupons img{
     width: 17px;
     height: 16px;
-    color: red;
 }
 #coupons>div{
     display: flex;

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <link rel="stylesheet" href="./CSS/address.css">
+</head>
+
+<body>
+    <div class="layout">
+        <div id="headerUnderline">
+            <div id="header">
+                <div>
+                    <a href="../index.html"><img height="45px"
+                            src="https://cdn.iconscout.com/icon/free/png-256/myntra-2709168-2249158.png" alt=""></a>
+                </div>
+                <div>
+                    <p> <span class="navbarMiddle"> <a href="../cart/cartPage.html" class="cart-page">BAG</a> </span>
+                        ----------- <span class="navbarMiddle navbarMiddlePayment"> ADDRESS</span>
+                        ----------- <span class="navbarMiddle"> PAYMENT </span> </p>
+                </div>
+                <div id="paymentNavSecure">
+                    <img height="28px" src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png"
+                        alt="">
+                    <p><span class="navbarMiddle">100 % SECURE</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="mountRoot">
+            <div id="appContent">
+                <div class="page   ">
+                    <div>
+                        <div>
+                            <div class="address">
+                                <div class="address-left">
+                                    <div class="address-Container">
+                                        <div class="address-base-container">
+                                            <form action="">
+                                                <label for="">CONTACT DETAILS</label><br>
+
+                                                <input type="text" placeholder="Name*"><br>
+                                                <input type="number" placeholder="Mobile No.*"><br>
+
+                                                <label for=""> ADDRESS </label><br>
+
+                                                <input type="number" name="pin" placeholder="Pin Code*"><br>
+                                                <input type="text" placeholder="Address (House No, Building, Street, Area)*"><br>
+                                                <input type="text" placeholder="City / District*">
+                                                <input type="text" placeholder="State*"><br>
+
+                                                <label for="">SAVE ADDRESS AS</label><br>
+                                                <input type="checkbox" name="" id=""><span>Make this my default address</span><br>
+                                                <button type="submit" class="button-base-button">ADD ADDRESS</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="address-right">
+                                    <div class="price-container ">
+                                        <div id="priceBlockHeader" class="priceBlock-items">PRICE DETAILS
+                                            (<span id="priceDetails">0</span> Items)</div>
+                                        <div class="price-detailBody">
+                                            <div class="priceBreakUp" id="priceBlock">
+                                                <div class="priceDetail-base-row">
+                                                    <span>Total MRP</span>
+                                                    <span class="priceDetail-base-value ">
+                                                        <span>₹</span>
+                                                        
+                                                        <span id="totalmrp">0</span>
+                                                    </span>
+                                                </div>
+                                                <div class="priceDetail-base-row">
+                                                    <span>Discount on MRP</span>
+                                                    <span class="priceDetail-base-value priceDetail-base-discount">
+                                                        <span>- ₹</span>
+                                                        
+                                                        <span id="totaldisc">0</span>
+                                                    </span>
+                                                </div>
+                                                <div class="priceDetail-base-row">
+                                                    <span>Convenience Fee
+                                                        <div class="priceDetail-base-infoTextContainer">
+                                                            <button font-size="body2" font-weight="bold" role="button"
+                                                                class="css-one">
+                                                                <div class="css-two">Know More</div>
+                                                            </button>
+                                                        </div>
+                                                    </span>
+                                                    <span class="priceDetail-base-value convienceFee">
+                                                        
+                                                        <span id="convenienceFee">₹ 99</span> <span
+                                                            style="color: #03a685;">FREE</span>
+                                                    </span>
+                                                </div>
+                                                <div class="priceDetail-base-total">
+                                                    <span>Total Amount</span>
+                                                    <span class="priceDetail-base-value ">
+                                                        <span>₹</span>
+                                                        
+                                                        <span id="totalamt">0</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="footerContent">
+                <div id="footerContentImg">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" alt="">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" alt="">
+                </div>
+                <a href="">Need Help ? Contact Us</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var total = JSON.parse(localStorage.getItem("addressTotalObj"));
+    document.getElementById("totalmrp").innerText = total.totalmrp;
+    document.getElementById("totaldisc").innerText = total.totaldisc;
+    document.getElementById("totalamt").innerText = total.totalamt;
+    document.getElementById("priceDetails").innerText = total.totalItem;
+
+    document.querySelector("form").addEventListener("submit", function () {
+        event.preventDefault();
+        location = "/payment.html";
+    })
+</script>
