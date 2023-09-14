@@ -168,6 +168,8 @@ let mensData=[
 },
 
  ]
+ let data=[...mensData]
+
 mensData.forEach((val)=>{
         const card=document.createElement("div");
         const image=document.createElement("img");
@@ -366,3 +368,75 @@ function filterCategory(val,container,card){
 
         });
 }
+
+function sortByBetterDiscount(a, b) {
+  return b.discount - a.discount;
+}
+function sortByHighToLow(a, b) {
+  return b.price - a.price;
+}
+function sortByLowToHigh(a, b) {
+  return a.price - b.price;
+}
+const sortDropdown = document.getElementById('sort');
+sortDropdown.addEventListener('change', function displaySortedProducts() {
+  const container=document.querySelector(".product_container");
+// const product_card=document.querySelector(".product_card");
+
+  const sort = document.getElementById('sort');
+  const sortValue = sort.value;
+
+  if (sortValue.toLowerCase() === 'discount') {
+   mensData.sort(sortByBetterDiscount);
+  } else if (sortValue.toLowerCase() === 'high'){
+    mensData.sort(sortByHighToLow);
+  }else if(sortValue.toLowerCase() === 'low'){
+      mensData.sort(sortByLowToHigh);
+  }
+  else{
+     mensData=[...data]; 
+  }
+  container.innerHTML="";
+  mensData.forEach((val)=>{
+    const card=document.createElement("div");
+    const image=document.createElement("img");
+    const brand=document.createElement("p");
+    const name=document.createElement("p");
+    const priceDiv=document.createElement("div");
+    const price=document.createElement("span");
+    const strikePrice=document.createElement("span");
+    const discount=document.createElement("span");
+    // const wishList=document.createElement("button");
+    const AddToCart=document.createElement("button");
+
+    const btnDiv=document.createElement("div");
+    btnDiv.classList.add("hiddenDiv");
+    image.classList.add("prod_img");
+
+    AddToCart.textContent="Add To Cart";
+    AddToCart.classList.add("btns");
+    // wishList.textContent="Wish List";
+    // wishList.classList.add("btns");
+    btnDiv.append(AddToCart);
+    card.setAttribute("class", "product_card");
+    image.setAttribute("src",val.img_url);
+    name.textContent=val.name;
+    price.textContent=`Rs.${val.price}`;
+    brand.textContent=val.brand;
+    strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+    discount.textContent=`(${val.discount} % OFF)`;
+    
+    priceDiv.append(price,strikePrice,discount);
+    card.append(image,btnDiv,brand,name,priceDiv);
+
+    container.append(card);
+   
+    filterColor(val,container,card);
+    filterCollar(val,container,card);
+    filterBrand(val,container,card);
+    filterCategory(val,container,card);
+    console.log(val.price)
+
+});
+console.log(sortValue);
+});

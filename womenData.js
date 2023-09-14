@@ -188,7 +188,7 @@ function ckChange(ckType) {
    
 )};
 function ckCollar(ckType) {
-var checkboxes = document.querySelectorAll('[name="collar"]');
+let checkboxes = document.querySelectorAll('[name="collar"]');
 checkboxes.forEach(function (checkbox) {
 if (!ckType.checked) {
 checkbox.disabled = false;
@@ -203,7 +203,7 @@ checkbox.disabled = false;
    
 )};
 function ckBrand(ckType) {
-var checkboxes = document.querySelectorAll('[name="brand"]');
+let checkboxes = document.querySelectorAll('[name="brand"]');
 checkboxes.forEach(function (checkbox) {
 if (!ckType.checked) {
 checkbox.disabled = false;
