@@ -149,7 +149,7 @@ let mensData=[
     brand:"Peter England",
     fabric:"70% Cotton 30% Mix-blend",
     discount:40,
-    collar:"Collar",
+    neck:"Collar",
 
 },
 {
@@ -162,7 +162,7 @@ let mensData=[
     brand:"Peter England",
     fabric:"70% Cotton 30% Mix-blend",
     discount:16,
-    collar:"Collar",
+    neck:"Collar",
 
 
 },
@@ -171,36 +171,45 @@ let mensData=[
  let data=[...mensData]
 
 mensData.forEach((val)=>{
-        const card=document.createElement("div");
-        const image=document.createElement("img");
-        const brand=document.createElement("p");
-        const name=document.createElement("p");
-        const priceDiv=document.createElement("div");
-        const price=document.createElement("span");
-        const strikePrice=document.createElement("span");
-        const discount=document.createElement("span");
-        const wishList=document.createElement("button");
-    
-        wishList.style.display="none";
-        wishList.textContent="Wish List";
-        wishList.classList.add("wishList");
-        card.setAttribute("class", "product_card");
-        image.setAttribute("src",val.img_url);
-        name.textContent=val.name;
-        price.textContent=`Rs.${val.price}`;
-        brand.textContent=val.brand;
-        strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
-        discount.textContent=`(${val.discount} % OFF)`;
-        
-        priceDiv.append(price,strikePrice,discount);
-        card.append(image,wishList,brand,name,priceDiv);
-        container.append(card);
-       
-        filterColor(val,container,card);
-        filterCollar(val,container,card);
-        filterBrand(val,container,card);
-        filterCategory(val,container,card);
-        
+  const card=document.createElement("div");
+  const image=document.createElement("img");
+  const brand=document.createElement("p");
+  const name=document.createElement("p");
+  const priceDiv=document.createElement("div");
+  const price=document.createElement("span");
+  const strikePrice=document.createElement("span");
+  const discount=document.createElement("span");
+  const AddToCart=document.createElement("button");
+
+  const btnDiv=document.createElement("div");
+  btnDiv.classList.add("hiddenDiv");
+  image.classList.add("prod_img");
+
+  AddToCart.textContent="Add To Cart";
+  AddToCart.classList.add("btns");
+  AddToCart.addEventListener("click",function(){
+    addingToCart(val,this);
+
+  })
+  btnDiv.append(AddToCart);
+  card.setAttribute("class", "product_card");
+  image.setAttribute("src",val.img_url);
+  name.textContent=val.name;
+  price.textContent=`Rs.${val.price}`;
+  brand.textContent=val.brand;
+  strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+  discount.textContent=`(${val.discount} % OFF)`;
+  
+  priceDiv.append(price,strikePrice,discount);
+  card.append(image,btnDiv,brand,name,priceDiv);
+
+  container.append(card);
+ 
+  filterColor(val,container,card);
+  filterCollar(val,container,card);
+  filterBrand(val,container,card);
+  filterCategory(val,container,card);
+  console.log(val.discount)
 
 });
 function ckChange(ckType) {
@@ -265,7 +274,32 @@ function ckCategories(ckType) {
                        
 )};       
            
+const count=document.getElementById('count_of_items');
+count.textContent=`${mensData.length} items`;
 
+function addingToCart(val,a){
+  // const AddToCart=document.querySelector("button");
+ let items = JSON.parse(localStorage.getItem("cartData")) || [];
+        let currFav = {
+          image: val.img_url,
+          name: val.name,
+          price: val.price,
+          descriptions: val.description,
+          fabric:val.fabric,
+          discount:val.discount,
+          brand:val.brand,
+      color:val.color,
+      category:val.category,
+      gender:val.gender,
+      discription:val.discription,
+        };
+
+        items.push(currFav);
+        a.classList.add("added");
+        a.textContent="Added";
+        localStorage.setItem("cartData", JSON.stringify(items));
+   console.log("items")
+}
 
 
 function filterColor(val,container,card){
@@ -440,3 +474,4 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
 });
 console.log(sortValue);
 });
+

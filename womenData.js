@@ -139,7 +139,6 @@ womensData.forEach((val)=>{
     const price=document.createElement("span");
     const strikePrice=document.createElement("span");
     const discount=document.createElement("span");
-    // const wishList=document.createElement("button");
     const AddToCart=document.createElement("button");
 
     const btnDiv=document.createElement("div");
@@ -148,8 +147,10 @@ womensData.forEach((val)=>{
 
     AddToCart.textContent="Add To Cart";
     AddToCart.classList.add("btns");
-    // wishList.textContent="Wish List";
-    // wishList.classList.add("btns");
+    AddToCart.addEventListener("click",function(){
+      addingToCart(val,this);
+
+    })
     btnDiv.append(AddToCart);
     card.setAttribute("class", "product_card");
     image.setAttribute("src",val.img_url);
@@ -233,33 +234,29 @@ checkbox.disabled = false;
            
 )};   
 function filterColor(val,container,card){
-    const checkBoxClr=document.querySelectorAll(".checkbox"); 
-        let selectedColor="all";       
-        checkBoxClr.forEach(checkbox => {
-        checkbox.addEventListener('change', function(){
-        selectedColor=checkbox.value;
-
-        // console.log(selectedColor);
-        if(checkbox.checked && selectedColor.toLowerCase()==val.color.toLowerCase()){
+  checkBoxClr=document.querySelectorAll(".checkbox"); 
+  let selectedColor="all";       
+  checkBoxClr.forEach(checkbox => {
+    checkbox.addEventListener('change', function(){
+    selectedColor=checkbox.value;
+       if(checkbox.checked && selectedColor.toLowerCase()==val.color.toLowerCase()){
           container.append(card);
-        }
+       }
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
-
         }
         else {
-            container.removeChild(card);
+          container.removeChild(card);
         }
-         console.log(selectedColor)
+
         });
 
         });
 };
 function filterCollar(val,container,card){
     const checkBoxClr=document.querySelectorAll(".collarChk"); 
-        let selectedColor="all";       
+        let selectedColor="all";     
         checkBoxClr.forEach(checkbox => {
         checkbox.addEventListener('change', function(){
         selectedColor=checkbox.value;
@@ -267,6 +264,8 @@ function filterCollar(val,container,card){
         // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.neck.toLowerCase()){
           container.append(card);
+        
+
         }
         else if(!checkbox.checked){
             console.log("Please select a color");
@@ -277,7 +276,6 @@ function filterCollar(val,container,card){
         else {
             container.removeChild(card);
         }
-         console.log(selectedColor)
         });
 
         });
@@ -335,12 +333,13 @@ function filterCategory(val,container,card){
 function sortByBetterDiscount(a, b) {
     return b.discount - a.discount;
   }
-  function sortByHighToLow(a, b) {
+function sortByHighToLow(a, b) {
     return b.price - a.price;
   }
-  function sortByLowToHigh(a, b) {
+function sortByLowToHigh(a, b) {
     return a.price - b.price;
   }
+
 const sortDropdown = document.getElementById('sort');
 sortDropdown.addEventListener('change', function displaySortedProducts() {
     const container=document.querySelector(".product_container");
@@ -403,3 +402,30 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
   });
 console.log(sortValue);
 });
+
+const count=document.getElementById('count_of_items');
+count.textContent=`${womensData.length} items`;
+
+function addingToCart(val,a){
+  // const AddToCart=document.querySelector("button");
+ let items = JSON.parse(localStorage.getItem("cartData")) || [];
+        let currFav = {
+          image: val.img_url,
+          name: val.name,
+          price: val.price,
+          descriptions: val.description,
+          fabric:val.fabric,
+          discount:val.discount,
+          brand:val.brand,
+      color:val.color,
+      category:val.category,
+      gender:val.gender,
+      discription:val.discription,
+        };
+
+        items.push(currFav);
+        a.classList.add("added");
+        a.textContent="Added";
+        localStorage.setItem("cartData", JSON.stringify(items));
+   console.log("items")
+}
