@@ -42,18 +42,19 @@
                                             <form action="">
                                                 <label for="">CONTACT DETAILS</label><br>
 
-                                                <input type="text" placeholder="Name*"><br>
-                                                <input type="number" placeholder="Mobile No.*"><br>
+                                                <input type="text" placeholder="Name*" id="name"><br>
+                                                <input type="number" placeholder="Mobile No.*" id="number"><br>
 
                                                 <label for=""> ADDRESS </label><br>
 
-                                                <input type="number" name="pin" placeholder="Pin Code*"><br>
-                                                <input type="text" placeholder="Address (House No, Building, Street, Area)*"><br>
-                                                <input type="text" placeholder="City / District*">
-                                                <input type="text" placeholder="State*"><br>
+                                                <input type="number" name="pin" placeholder="Pin Code*" id="pin"><br>
+                                                <input type="text" placeholder="Address (House No, Building, Street, Area)*" id="address"><br>
+                                                <input type="text" placeholder="City / District*" id="city">
+                                                <input type="text" placeholder="State*" id="state"><br>
 
                                                 <label for="">SAVE ADDRESS AS</label><br>
                                                 <input type="checkbox" name="" id=""><span>Make this my default address</span><br>
+                                                <h5></h5>
                                                 <button type="submit" class="button-base-button">ADD ADDRESS</button>
                                             </form>
                                         </div>
@@ -83,7 +84,7 @@
                                                 </div>
                                                 <div class="priceDetail-base-row">
                                                     <span>Convenience Fee
-                                                        <div class="priceDetail-base-infoTextContainer">
+                                                        <div class="priceDetail-Container">
                                                             <button font-size="body2" font-weight="bold" role="button"
                                                                 class="css-one">
                                                                 <div class="css-two">Know More</div>
@@ -143,8 +144,23 @@
     document.getElementById("totalamt").innerText = total.totalamt;
     document.getElementById("priceDetails").innerText = total.totalItem;
 
-    document.querySelector("form").addEventListener("submit", function () {
+    document.querySelector("form").addEventListener("submit", function(){ 
         event.preventDefault();
-        location = "/payment.html";
+        var target=event.target
+        var name=target.querySelector("#name").value
+        var mobile=target.querySelector("#number").value
+        var pin=target.querySelector("#pin").value
+        var address=target.querySelector("#address").value
+        var city=target.querySelector("#city").value
+        var state=target.querySelector("#state").value
+        if(name==""||mobile==""||pin==""||address==""||city==""||state=="")
+        {
+            var h5=document.querySelector("h5")
+            h5.innerText="* mark field is mandatory!";
+        }
+        else
+        {
+            location = "/payment.html";
+        }
     })
 </script>
