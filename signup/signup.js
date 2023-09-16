@@ -43,5 +43,5 @@ function formfn(e) {
     var login = document.querySelector(".login").addEventListener("click", loginfn)
 
     function loginfn() {
-        window.location = "login.html"
+        window.location = "../login/login.html"
     }

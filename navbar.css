@@ -1,0 +1,418 @@
+.menu-bar {
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  box-sizing: inherit;
+  height: 80px;
+  padding-left: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+#navbar {
+  height: 60px;
+  text-align: center;
+
+}
+
+.bcg {
+  width: 100%;
+  height: 500px;
+}
+
+#nav-titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.menu-bar ul {
+  display: flex;
+  top: 100%;
+  margin-top: 0;
+
+  list-style: none;
+}
+
+.menu-bar ul>li {
+  align-self: center;
+}
+
+.menu-bar ul li {
+  padding: 15px;
+  font-weight: 500;
+}
+
+#nav-titles+input {
+  margin-left: 10px;
+  width: 400px;
+
+  align-self: center;
+
+}
+
+.pro>img {
+  height: 60px;
+  width: 60px;
+  margin-top: 11px;
+  margin-left: 55px;
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sub-menu-1 {
+  display: none;
+  font-weight: bold;
+  top: 100%;
+  margin-left: -70px;
+  padding-top: 50px;
+  height: 440px;
+  width: 1135px;
+  background-color: white;
+
+}
+
+.sub-menu-1 a:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.sub-menu-1 a {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.menHover:hover {
+  border-bottom: 4px solid rgb(238, 0, 119);
+}
+
+#wm:hover {
+  border-bottom: 5px solid rgb(241, 106, 174);
+
+
+}
+
+#kd:hover {
+  border-bottom: 5px solid orangered;
+}
+
+#hl:hover {
+  border-bottom: 5px solid gold;
+}
+
+#beauty-tag:hover {
+  border-bottom: 5px solid rgb(6, 47, 109);
+}
+
+#studio-tag:hover {
+  border-bottom: 5px solid rgb(238, 0, 119);
+}
+
+#profile-tag:hover {
+  border-bottom: 4px solid #f16565;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+  display: flex;
+  position: absolute;
+  font-weight: 300;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+}
+
+menu-bar ul li:hover bcg {
+  display: block;
+  background-color: #232377;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  padding: 1px 5px;
+  background: transparent;
+  text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a h4 {
+  color: rgb(238, 0, 119);
+}
+
+ul>li:nth-child(5) {
+  height: fit-content;
+  width: max-content;
+}
+
+.pro {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pro>img {
+  height: 17px;
+  width: 17px;
+  margin-left: 14px;
+  margin-bottom: 4px;
+}
+
+
+#Profile-Div {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 87px;
+  font-size: 13.5px;
+}
+
+.pro>span {
+  margin-left: 5px;
+}
+
+.icon {
+  padding-left: 25px;
+  background: url("file:///C:/Users/Admin/Downloads/search_FILL0_wght400_GRAD0_opsz48.svg") no-repeat left;
+  background-size: 02px;
+  height: 35px;
+  width: 100px;
+  border: none;
+  background-color: #f5f5f6;
+}
+
+
+.studio-new {
+  color: #ff4e78;
+  padding: 5px;
+  font-size: xx-small;
+}
+
+.sub-menu-5 #start-img img {
+  height: 300px;
+  width: 420px;
+}
+
+.sub-menu-5 #studio-logo-for {
+  height: 60px;
+  width: 120px;
+  align-items: center;
+  margin-left: 140px;
+  margin-top: 10px;
+}
+
+.sub-menu-5 #text-for-studio {
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  width: 420px;
+  margin-bottom: 18px;
+  margin-top: -20px;
+  color: #535766;
+}
+
+.sub-menu-5 button {
+  height: 40px;
+  width: 180px;
+  border: 1px solid rgba(0, 0, 0, 0.282);
+  margin-bottom: 10px;
+  margin-left: 120px;
+  margin-top: 10px;
+  font-size: 16px;
+
+}
+
+
+.sub-menu-5 {
+  display: none;
+  font-weight: bold;
+  top: 100%;
+  margin-left: -700px;
+
+  width: 480px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.menu-bar ul li:hover .sub-menu-5 {
+  display: flex;
+  position: absolute;
+  font-weight: 300;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+}
+
+.menu-bar ul li:hover .sub-menu-5 ul {
+  display: block;
+}
+
+.menu-bar ul li:hover .sub-menu-5 ul li {
+  width: 150px;
+  padding: 1px 5px;
+  background: transparent;
+  text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu-5 ul li a h4 {
+  color: rgb(238, 0, 119);
+}
+
+.bcg {
+
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.111);
+  z-index: -1;
+  pointer-events: none;
+  height: 1000px;
+}
+
+.bcg {
+
+  visibility: hidden;
+
+}
+
+.sub-menu-1:hover .bcg {
+  visibility: visible;
+}
+
+.sub-menu-5:hover .bcg {
+  visibility: visible;
+}
+
+.menHover:hover+.bcg {
+  visibility: visible;
+}
+
+#wm:hover+.bcg {
+  visibility: visible;
+}
+
+#kd:hover+.bcg {
+  visibility: visible;
+}
+
+#hl:hover+.bcg {
+  visibility: visible;
+}
+
+#beauty-tag:hover+.bcg {
+  visibility: visible;
+}
+
+#studio-tag:hover+.bcg {
+  visibility: visible;
+}
+
+#profile-tag:hover+.bcg {
+  visibility: visible;
+}
+
+#last-bag-box img {
+  margin-left: 0px;
+}
+
+#last-bag-box span {
+  font-size: 14px;
+}
+
+#profile-dropdown {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#profile-dropdown ul {
+  width: 150%;
+  margin-top: -35px;
+}
+
+#profile-dropdown div {
+
+  margin-left: 0px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.264);
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+}
+
+#profile-dropdown div:last-child {
+  border-bottom: 10px;
+}
+
+#profile-dropdown-hover {
+  text-align: start;
+  font-size: 15px;
+}
+
+#profile-dropdown-hover div button {
+  height: 35px;
+  width: 200px;
+  color: #ff3f6c;
+  background-color: white;
+  border: 0.5px solid #ff3f6c47;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+#profile-dropdown-hover div button:hover {
+  border: 1px solid #ff3f6c;
+}
+
+
+#sb1 h4 {
+  color: #fb56c1;
+}
+
+#sb2 h4 {
+  color: #f26a10;
+}
+
+#sb3 h4 {
+  color: #f2c210;
+}
+
+.sub-menu-1 div ul li+li {
+  font-size: 1px;
+  font-weight: 400;
+  margin-top: 3px;
+}
+
+#sb4 h4 {
+  color: #0db7af;
+}
+
+.desktop-melon {
+  background-color: #f16565;
+}
+
+.desktop-badge {
+  white-space: nowrap;
+  text-align: center;
+  line-height: 18px;
+  padding: 0 6px;
+  height: 18px;
+  background: #ff3f6c;
+  position: absolute;
+  border-radius: 50%;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 700;
+}
