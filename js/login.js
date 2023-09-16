@@ -21,6 +21,7 @@ function formfn(e){
                 var login=document.querySelector(".login")
                 var h5=document.querySelector("h5")
                 h5.innerHTML="Logged in Please start shopping!"
+                localStorage.setItem("ProfileName",e.name)
                 // window.location="index.html"
                 flag=1;
                 return

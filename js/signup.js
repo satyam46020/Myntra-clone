@@ -6,10 +6,12 @@ var arr = JSON.parse(localStorage.getItem("userData")) || []
 function formfn(e) {
     e.preventDefault();
     var target = e.target
+    var name = target.querySelector("#name").value
     var email = target.querySelector("#email").value
     var password = target.querySelector("#password").value
 
     var obj = {
+        name,
         email,
         password
     }
