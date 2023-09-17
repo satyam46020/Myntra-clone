@@ -48,12 +48,15 @@
                                                 <label for=""> ADDRESS </label><br>
 
                                                 <input type="number" name="pin" placeholder="Pin Code*" id="pin"><br>
-                                                <input type="text" placeholder="Address (House No, Building, Street, Area)*" id="address"><br>
+                                                <input type="text"
+                                                    placeholder="Address (House No, Building, Street, Area)*"
+                                                    id="address"><br>
                                                 <input type="text" placeholder="City / District*" id="city">
                                                 <input type="text" placeholder="State*" id="state"><br>
 
                                                 <label for="">SAVE ADDRESS AS</label><br>
-                                                <input type="checkbox" name="" id=""><span>Make this my default address</span><br>
+                                                <input type="checkbox" name="" id=""><span>Make this my default
+                                                    address</span><br>
                                                 <h5></h5>
                                                 <button type="submit" class="button-base-button">ADD ADDRESS</button>
                                             </form>
@@ -70,7 +73,7 @@
                                                     <span>Total MRP</span>
                                                     <span class="priceDetail-base-value ">
                                                         <span>₹</span>
-                                                        
+
                                                         <span id="totalmrp">0</span>
                                                     </span>
                                                 </div>
@@ -78,7 +81,7 @@
                                                     <span>Discount on MRP</span>
                                                     <span class="priceDetail-base-value priceDetail-base-discount">
                                                         <span>- ₹</span>
-                                                        
+
                                                         <span id="totaldisc">0</span>
                                                     </span>
                                                 </div>
@@ -92,7 +95,7 @@
                                                         </div>
                                                     </span>
                                                     <span class="priceDetail-base-value convienceFee">
-                                                        
+
                                                         <span id="convenienceFee">₹ 99</span> <span
                                                             style="color: #03a685;">FREE</span>
                                                     </span>
@@ -101,7 +104,7 @@
                                                     <span>Total Amount</span>
                                                     <span class="priceDetail-base-value ">
                                                         <span>₹</span>
-                                                        
+
                                                         <span id="totalamt">0</span>
                                                     </span>
                                                 </div>
@@ -144,22 +147,20 @@
     document.getElementById("totalamt").innerText = total.totalamt;
     document.getElementById("priceDetails").innerText = total.totalItem;
 
-    document.querySelector("form").addEventListener("submit", function(){ 
+    document.querySelector("form").addEventListener("submit", function () {
         event.preventDefault();
-        var target=event.target
-        var name=target.querySelector("#name").value
-        var mobile=target.querySelector("#number").value
-        var pin=target.querySelector("#pin").value
-        var address=target.querySelector("#address").value
-        var city=target.querySelector("#city").value
-        var state=target.querySelector("#state").value
-        if(name==""||mobile==""||pin==""||address==""||city==""||state=="")
-        {
-            var h5=document.querySelector("h5")
-            h5.innerText="* mark field is mandatory!";
+        var target = event.target
+        var name = target.querySelector("#name").value
+        var mobile = target.querySelector("#number").value
+        var pin = target.querySelector("#pin").value
+        var address = target.querySelector("#address").value
+        var city = target.querySelector("#city").value
+        var state = target.querySelector("#state").value
+        if (name == "" || mobile == "" || pin == "" || address == "" || city == "" || state == "") {
+            var h5 = document.querySelector("h5")
+            h5.innerText = "* mark field is mandatory!";
         }
-        else
-        {
+        else {
             location = "/payment.html";
         }
     })

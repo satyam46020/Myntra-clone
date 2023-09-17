@@ -15,33 +15,29 @@ function formfn(e) {
         email,
         password
     }
-    var temp=0
+    var temp = 0
     arr.forEach(ele => {
-        if(obj.email == ele.email)
-        {
-            temp=1;
+        if (obj.email == ele.email) {
+            temp = 1;
         }
-        
+
     });
-    var h5=document.querySelector("h5")
-    if(obj.email==""||obj.password=="")
-    {
-        h5.innerHTML="Email or Password can't be Empty!"
+    var h5 = document.querySelector("h5")
+    if (obj.email == "" || obj.password == "") {
+        h5.innerHTML = "Email or Password can't be Empty!"
     }
-    else if(temp==0)
-    {
+    else if (temp == 0) {
         arr.push(obj)
-    
+
         localStorage.setItem("userData", JSON.stringify(arr))
-        h5.innerHTML="Signed up please Log in!"
+        h5.innerHTML = "Signed up please Log in!"
     }
-    else
-    {
-        h5.innerHTML="Already Registered Please Log in!"
+    else {
+        h5.innerHTML = "Already Registered Please Log in!"
     }
 }
-    var login = document.querySelector(".login").addEventListener("click", loginfn)
+var login = document.querySelector(".login").addEventListener("click", loginfn)
 
-    function loginfn() {
-        window.location = "../login/login.html"
-    }
+function loginfn() {
+    window.location = "../login/login.html"
+}

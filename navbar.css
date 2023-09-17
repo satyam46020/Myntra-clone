@@ -416,3 +416,52 @@ ul>li:nth-child(5) {
   margin-left: 10px;
   font-weight: 700;
 }
+/* Your existing styles */
+
+/* Media Query for Small Screens (e.g., Mobile) */
+@media screen and (max-width: 800px) {
+  /* Hide the menu bar by default */
+  .menu-bar ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  /* Style the hamburger icon */
+  .menu-bar .menu-icon {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  /* Show the menu when the hamburger icon is clicked */
+  .menu-bar .menu-icon.active + ul {
+    display: flex;
+  }
+
+  /* Style individual menu items in the hamburger menu */
+  .menu-bar ul li {
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Your existing styles for sub-menus, hover effects, and other elements */
+
+  /* Additional styles specific to smaller screens */
+  /* You can add more styles as needed */
+
+  /* Hide the search bar on small screens */
+  #nav-titles + input {
+    display: none;
+  }
+}
