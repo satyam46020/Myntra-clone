@@ -22,7 +22,8 @@ fabric:"Viscose Rayon",
 category:"set",
 gender:"women"
 },
-{ name:'Golden Printed Gotta Patti Kurta with Trousers',
+{ 
+name:'Golden Printed Gotta Patti Kurta with Trousers',
 img_url:"http://assets.myntassets.com/assets/images/14989470/2022/1/18/aaee9424-201b-4759-ab9c-e72aa3f05a651642490827775-Sangria-Women-Green-Printed-High-Slit-Kurta-with-Trousers-11-1.jpg",
 brand:"Sangria",
 price:2999,
@@ -140,6 +141,12 @@ womensData.forEach((val)=>{
     const strikePrice=document.createElement("span");
     const discount=document.createElement("span");
     const AddToCart=document.createElement("button");
+    image.addEventListener("click",function(){
+      setDetails(val);
+    })
+    name.addEventListener("click",function(){
+      setDetails(val);
+    })
 
     const btnDiv=document.createElement("div");
     btnDiv.classList.add("hiddenDiv");
@@ -319,9 +326,7 @@ function filterCategory(val,container,card){
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
-
-        }
+       }
         else {
             container.removeChild(card);
         }
@@ -406,26 +411,55 @@ console.log(sortValue);
 const count=document.getElementById('count_of_items');
 count.textContent=`${womensData.length} items`;
 
+
 function addingToCart(val,a){
   // const AddToCart=document.querySelector("button");
  let items = JSON.parse(localStorage.getItem("cartData")) || [];
-        let currFav = {
-          image: val.img_url,
-          name: val.name,
-          price: val.price,
-          descriptions: val.description,
-          fabric:val.fabric,
-          discount:val.discount,
-          brand:val.brand,
-      color:val.color,
-      category:val.category,
-      gender:val.gender,
-      discription:val.discription,
-        };
+ const existingItem = items.find(item => item.name === val.name);
+ if (existingItem) {
+  existingItem.quantity = (existingItem.quantity || 1) + 1;
+  alert("Added Again!")
+ }
+ else {
+  // If the product is not in the cart, add it as a new entry with quantity 1
+  const currFav = {
+    image: val.img_url,
+    name: val.name,
+    price: val.price,
+    descriptions: val.description,
+    fabric: val.fabric,
+    discount: val.discount,
+    brand: val.brand,
+    color: val.color,
+    category: val.category,
+    gender: val.gender,
+    discription: val.discription,
+    quantity: 1, // Initialize quantity to 1 for new items
+  };
+  
+  items.push(currFav);
+  a.textContent="Added!";
 
-        items.push(currFav);
+}
+       
+
         a.classList.add("added");
-        a.textContent="Added";
-        localStorage.setItem("cartData", JSON.stringify(items));
+   localStorage.setItem("cartData", JSON.stringify(items));
    console.log("items")
 }
+
+const menu =document.querySelector(".ham");
+
+menu.addEventListener("click",function() {
+  const functionality=document.querySelector(".functionality");
+  functionality.classList.toggle("hamFilter");
+})
+
+const count=document.getElementById('count_of_items');
+count.textContent=`${mensData.length} items`;
+
+function setDetails(a){
+localStorage.setItem("details",JSON.stringify(a));
+window.location.assign("./dummyDetails.html")
+}
+  

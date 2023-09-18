@@ -1,5 +1,8 @@
 const container=document.querySelector(".product_container");
 const product_card=document.querySelector(".product_card");
+const sortDropdown = document.getElementById('sort');
+
+//Data for Men
 let mensData=[
     {
         name:"Men  Round Neck T-shirt",
@@ -150,6 +153,7 @@ let mensData=[
     fabric:"70% Cotton 30% Mix-blend",
     discount:40,
     neck:"Collar",
+    description:"Peter England Men Shirt Tailored Fit Self Design Formal Shirt,"
 
 },
 {
@@ -163,13 +167,43 @@ let mensData=[
     fabric:"70% Cotton 30% Mix-blend",
     discount:16,
     neck:"Collar",
+    description:"Peter England Men Purple Shirt Self Design Formal Shirt,  Louis Philippe,formal-shirts",
 
 
 },
 
- ]
- let data=[...mensData]
+{
+  name:"Canary London Men Peach Shirt",
+  category:"Shirts",
+  img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6943782/2018/7/13/a6982d2f-62fd-4762-a93b-8d5e501b153e1531476601539-a-6161531476601280-1.jpg",
+  price:824,
+  color:"Peach",
+  gender:"Men",
+  brand:"Canary London",
+  fabric:"Cotton",
+  discount:10,
+  neck:"Collar",
+  description:"Canary London Men Peach Coloured & Blue Regular Fit Checked Formal Shirt",
+},{
+  name:"Louis Philippe Men Grey Shirt",
+  img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/8294445/2019/2/1/ca80dd19-cc2a-48fe-9334-705e409ac91d1549024987575-Louis-Philippe-Men-Grey-Slim-Fit-Printed-Formal-Shirt-365154-1.jpg",
+  price:2199, 
+  color:"grey",
+  gender:"Men",
+  brand:"Canary London",
+  fabric:"Cotton",
+  discount:13,
+  neck:"Collar",
+  description:"Louis Philippe Men Grey Slim Fit Self Design Formal Shirt,  Louis Philippe,formal-shirts",
 
+
+}
+ ]
+
+ //copying data as dummy
+let data=[...mensData]
+
+//intial render
 mensData.forEach((val)=>{
   const card=document.createElement("div");
   const image=document.createElement("img");
@@ -181,12 +215,22 @@ mensData.forEach((val)=>{
   const discount=document.createElement("span");
   const AddToCart=document.createElement("button");
 
+  //Routing and setting data for details page
+  image.addEventListener("click",function(){
+    setDetails(val);
+  })
+  name.addEventListener("click",function(){
+    setDetails(val);
+  })
+
+
   const btnDiv=document.createElement("div");
   btnDiv.classList.add("hiddenDiv");
   image.classList.add("prod_img");
-
   AddToCart.textContent="Add To Cart";
   AddToCart.classList.add("btns");
+
+  //Add to cart function call
   AddToCart.addEventListener("click",function(){
     addingToCart(val,this);
 
@@ -277,28 +321,15 @@ function ckCategories(ckType) {
 const count=document.getElementById('count_of_items');
 count.textContent=`${mensData.length} items`;
 
-function addingToCart(val,a){
-  // const AddToCart=document.querySelector("button");
- let items = JSON.parse(localStorage.getItem("cartData")) || [];
-        let currFav = {
-          image: val.img_url,
-          name: val.name,
-          price: val.price,
-          descriptions: val.description,
-          fabric:val.fabric,
-          discount:val.discount,
-          brand:val.brand,
-      color:val.color,
-      category:val.category,
-      gender:val.gender,
-      discription:val.discription,
-        };
+const menu =document.querySelector(".ham");
 
-        items.push(currFav);
-        a.classList.add("added");
-        a.textContent="Added";
-        localStorage.setItem("cartData", JSON.stringify(items));
-   console.log("items")
+menu.addEventListener("click",function() {
+  const functionality=document.querySelector(".functionality");
+  functionality.classList.toggle("hamFilter");
+})
+function setDetails(a){
+localStorage.setItem("details",JSON.stringify(a));
+window.location.assign("./dummyDetails.html")
 }
 
 
@@ -412,7 +443,7 @@ function sortByHighToLow(a, b) {
 function sortByLowToHigh(a, b) {
   return a.price - b.price;
 }
-const sortDropdown = document.getElementById('sort');
+
 sortDropdown.addEventListener('change', function displaySortedProducts() {
   const container=document.querySelector(".product_container");
 // const product_card=document.querySelector(".product_card");
@@ -474,4 +505,44 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
 });
 console.log(sortValue);
 });
+
+// const pageDetailsNav = document.querySelector('.product-card');
+function addingToCart(val,a){
+  // const AddToCart=document.querySelector("button");
+ let items = JSON.parse(localStorage.getItem("cartData")) || [];
+ const existingItem = items.find(item => item.name === val.name);
+ if (existingItem) {
+  existingItem.quantity = (existingItem.quantity || 1) + 1;
+  a.textContent="Added!";
+
+  alert("Added Again!")
+ }
+ else {
+  // If the product is not in the cart, add it as a new entry with quantity 1
+  const currFav = {
+    image: val.img_url,
+    name: val.name,
+    price: val.price,
+    descriptions: val.description,
+    fabric: val.fabric,
+    discount: val.discount,
+    brand: val.brand,
+    color: val.color,
+    category: val.category,
+    gender: val.gender,
+    discription: val.discription,
+    quantity: 1, // Initialize quantity to 1 for new items
+  };
+  
+  items.push(currFav);
+  a.textContent="Added!";
+
+}
+       
+
+        a.classList.add("added");
+   localStorage.setItem("cartData", JSON.stringify(items));
+   console.log("items")
+}
+
 
