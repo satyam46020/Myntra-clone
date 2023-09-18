@@ -87,7 +87,7 @@
         <p class="merchant-name">Merchant Name: Myntra Designs Pvt. Ltd.</p>
         <p>Amount: <span id="amount">$100.00</span></p>
         <p>Date: <span id="date">2023-09-18</span></p>
-        <p style="color: green;"> <img class="classimg" src="../image-navbar/tick.png" alt="T" style="vertical-align: middle; margin-left: 5px;">OTP has been sent</p>
+        <p style="color: green;"> <img class="classimg" src="https://tse2.mm.bing.net/th?id=OIP.oFEWpe-Xf8ZEEbHeIiBrNQHaHa&pid=Api&P=0&h=180" alt="T" style="vertical-align: middle; margin-left: 5px;">OTP has been sent</p>
         <div class="input-container">
             <input type="text" id="otpInput" class="otp-input" placeholder="Enter OTP">
             <button id="submitButton" class="submit-button">Submit</button>
@@ -100,15 +100,9 @@
     </div>
 
     <script>
-        // Retrieve card number and amount from localStorage
-        var cardNumber = localStorage.getItem("cardNumber");
-        var amount = localStorage.getItem("amount");
-
-        // Populate card number and amount in the HTML
-        document.getElementById("cardNumber").textContent = cardNumber;
-        document.getElementById("amount").textContent = amount;
-
-        // Function to update the date in dd/mm/yyyy format
+        var arr=JSON.parse(localStorage.getItem("otp"))
+        document.querySelector("#cardNumber").innerHTML=arr.card
+        document.querySelector("#amount").innerHTML=arr.total
         function updateDate() {
             var currentDate = new Date();
             var day = currentDate.getDate().toString().padStart(2, '0');
@@ -117,50 +111,35 @@
             var formattedDate = day + '/' + month + '/' + year;
             document.getElementById("date").textContent = formattedDate;
         }
-
-        // Call the updateDate function to set the initial date
         updateDate();
 
-        // JavaScript code for handling OTP submission
         document.getElementById("submitButton").addEventListener("click", function() {
-            // Get the entered OTP
+      
             var enteredOTP = document.getElementById("otpInput").value;
 
-            // Perform OTP validation here (e.g., compare with the expected OTP)
-            // If the OTP is valid, redirect to the thank you page.
-            // Otherwise, display an error message and shake the screen.
-
-            // For this example, let's assume the expected OTP is "123456".
             var expectedOTP = "123456";
 
             if (enteredOTP === expectedOTP) {
-                // Redirect to the thank you page
+             
                 window.location.href = "../payment/thankyou.html";
             } else {
-                // Display the error message and shake the screen
                 var errorMessage = document.getElementById("errorMessage");
                 errorMessage.style.display = "block";
 
-                // Hide the error message after 3 seconds
                 setTimeout(function() {
                     errorMessage.style.display = "none";
                 }, 3000);
 
-                // Add a class to trigger the shake animation
                 document.body.classList.add("shake");
 
-                // Remove the class after the animation completes
                 setTimeout(function() {
                     document.body.classList.remove("shake");
-                }, 500); // Should match the duration of the shake animation
+                }, 500); 
             }
         });
 
-        // JavaScript code for handling OTP resend (remains the same)
         document.getElementById("resendLink").addEventListener("click", function(event) {
             event.preventDefault();
-            // Implement OTP resend logic here (e.g., send a new OTP to the user's mobile number or email).
-            // You can also update the UI to show a success message or a timer for the next OTP resend.
             alert("OTP has been resent.");
         });
     </script>
