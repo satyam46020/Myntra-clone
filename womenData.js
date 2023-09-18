@@ -408,8 +408,12 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
 console.log(sortValue);
 });
 
-const count=document.getElementById('count_of_items');
-count.textContent=`${womensData.length} items`;
+const menu =document.querySelector(".ham");
+
+menu.addEventListener("click",function() {
+  const functionality=document.querySelector(".functionality");
+  functionality.classList.toggle("hamFilter");
+})
 
 
 function addingToCart(val,a){
@@ -448,15 +452,15 @@ function addingToCart(val,a){
    console.log("items")
 }
 
-const menu =document.querySelector(".ham");
+// const menu =document.querySelector(".ham");
 
-menu.addEventListener("click",function() {
-  const functionality=document.querySelector(".functionality");
-  functionality.classList.toggle("hamFilter");
-})
+// menu.addEventListener("click",function() {
+//   const functionality=document.querySelector(".functionality");
+//   functionality.classList.toggle("hamFilter");
+// })
 
 const count=document.getElementById('count_of_items');
-count.textContent=`${mensData.length} items`;
+count.textContent=`${womensData.length} items`;
 
 function setDetails(a){
 localStorage.setItem("details",JSON.stringify(a));
