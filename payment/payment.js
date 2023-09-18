@@ -11,7 +11,7 @@ function showCard(){
     var btn = document.querySelector(".placeOrder");
     btn.addEventListener("click", function(){
         event.preventDefault();
-        window.location = "thankyou.html";
+        window.location = "OTP.html";
     })
 }
 document.getElementById("cod").addEventListener("click", showCod);
@@ -34,10 +34,12 @@ function showCod(){
     inputDiv.setAttribute("class", "codCardUI-base-helpText");
     div.append(headingDiv, inputDiv);
     
-    var btn = document.querySelector(".placeOrder");
+    var btn = document.createElement("button");
+    btn.setAttribute("class", "placeOrder");
+    btn.innerHTML = placeOrderBtn;
     btn.addEventListener("click", function(){
         event.preventDefault();
-        location = "thankyou.html";
+        location = "OTP.html";
     });
     form.append(div, btn);
 }
