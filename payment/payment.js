@@ -9,9 +9,10 @@ function showCard(){
     document.querySelector("#card").style.backgroundColor = "white";
     x.innerHTML = form;
     var btn = document.querySelector(".placeOrder");
-    btn.addEventListener("click", function(){
+    form.addEventListener("submit", function(event){
         event.preventDefault();
-        window.location = "thankyou.html";
+        window.location.assign("./opt.html")
+        console.log()
     })
 }
 document.getElementById("cod").addEventListener("click", showCod);
