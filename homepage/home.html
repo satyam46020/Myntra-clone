@@ -43,13 +43,13 @@
                       <h4>Topwear</h4>
                     </a>
                   </li>
-                  <li><a href="./Product_Page/mens.html">T-Shirts</a></li>
-                  <li><a href="./Product_Page/mens.html">Casual Shirts</a></li>
-                  <li><a href="./Product_Page/mens.html">Sweatshirts</a></li>
-                  <li><a href="./Product_Page/mens.html">Jackets</a></li>
-                  <li><a href="./Product_Page/mens.html">Blazers & Coats</a></li>
-                  <li><a href="./Product_Page/mens.html">Suits</a></li>
-                  <li><a href="./Product_Page/mens.html">Rain Jackets</a></li>
+                  <li><a href="../productPage/mens.html">T-Shirts</a></li>
+                  <li><a href="../productPage/mens.html">Casual Shirts</a></li>
+                  <li><a href="../productPage/mens.html">Sweatshirts</a></li>
+                  <li><a href="../productPage/mens.html">Jackets</a></li>
+                  <li><a href="../productPage/mens.html">Blazers & Coats</a></li>
+                  <li><a href="../productPage/mens.html">Suits</a></li>
+                  <li><a href="../productPage/mens.html">Rain Jackets</a></li>
                 </ul>
               </div>
 
@@ -144,11 +144,11 @@
                       <h4>Indian & Fusion Wear</h4>
                     </a>
                   </li>
-                  <li><a href="./Product_Page/womens.html"> Kurtas & Suits</a></li>
-                  <li><a href="./Product_Page/womens.html"> Kurtis, Tunics & Tops</a></li>
-                  <li><a href="./Product_Page/womens.html"> Sarees</a></li>
-                  <li><a href="./Product_Page/womens.html"> Ethnic Wear</a></li>
-                  <li><a href="./Product_Page/womens.html"> Leggings, Salwars & Churidars</a></li>
+                  <li><a href="../productPage/womens.html"> Kurtas & Suits</a></li>
+                  <li><a href="../productPage/womens.html"> Kurtis, Tunics & Tops</a></li>
+                  <li><a href="../productPage/womens.html"> Sarees</a></li>
+                  <li><a href="../productPage/womens.html"> Ethnic Wear</a></li>
+                  <li><a href="../productPage/womens.html"> Leggings, Salwars & Churidars</a></li>
 
                   <li><a href="#"> Skirts & Palazzos</a></li>
                   <li><a href="#"> Dress Materials</a></li>
@@ -604,7 +604,7 @@
                   <div>
                     <h3>Welcome</h3>
                     <p style="margin-top:-15px ;">To access account and manage orders</p>
-                    <a href="./LOGIN/Signup.html">
+                    <a href="../login/login.html">
                       <button id="logbtn">LOGIN / SIGNUP</button>
                     </a>
                     <!-- <button>LOGIN / SIGNUP</button> -->
@@ -641,7 +641,7 @@
             </a>
           </li>
           <li>
-            <a href="./cart/cartPage.html">
+            <a href="../Cart/cartPage.html">
               <div id="last-bag-box" class="pro">
                 <img src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png" alt="" />
                 <span id="cartCurrentItemShow" data-reactid="901" style="font-size: 11px; margin-left: 10px;"></span>
@@ -677,7 +677,7 @@
         </div>
         <div class="slide">
           <img
-            src="image-slidebar\image1.webp"
+            src="../image-slidebar/image1.webp"
             alt="" />
         </div>
         <div class="slide">
@@ -1273,17 +1273,13 @@
 
 
 
-  var CustomerData = JSON.parse(localStorage.getItem("arraylist")) || [];
-  if (CustomerData.length > 0) {
-    document.getElementById("logbtn").innerText = CustomerData[CustomerData.length - 1].Name1;
-    // console.log(CustomerData);
-  }
+  var CustomerName =localStorage.getItem("ProfileName") || "";
+  if (CustomerName!="") {
+    console.log(CustomerName)
+    document.getElementById("logbtn").innerText = CustomerName;
 
-  // displayCartTotal();
-  // last change by abhi
-  // function displayCartTotal() {
+  }
   var bagTotal = JSON.parse(localStorage.getItem("cartTotalBag"));
-  // console.log(bagTotal, "test");
   if (bagTotal > 0) {
     var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
     cartCurrentItemShow.setAttribute("class", "desktop-badge desktop-melon");
@@ -1291,6 +1287,6 @@
 
     localStorage.setItem("cartTotalBag", JSON.stringify(bagTotal));
   }
-  // }
+  
 
 </script>

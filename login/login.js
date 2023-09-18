@@ -18,9 +18,9 @@ function formfn(e) {
             if (e.email == email && e.password == password) {
                 var login = document.querySelector(".login")
                 var h5 = document.querySelector("h5")
-                h5.innerHTML = "Logged in Please start shopping!"
                 localStorage.setItem("ProfileName", e.name)
-                // window.location="index.html"
+                
+                window.location="../homepage/home.html"
                 flag = 1;
                 return
             }
@@ -37,6 +37,11 @@ function formfn(e) {
         }
     }
 }
+var CustomerName =localStorage.getItem("ProfileName") || "";
+if (CustomerName!="") {
+    document.getElementById("logbtn").innerText = CustomerName;
+
+}
 var signup = document.querySelector(".signup").addEventListener("click", signupfn)
 
 function signupfn() {
@@ -45,14 +50,8 @@ function signupfn() {
 var CustomerData = JSON.parse(localStorage.getItem("arraylist")) || [];
   if (CustomerData.length > 0) {
     document.getElementById("logbtn").innerText = CustomerData[CustomerData.length - 1].Name1;
-    // console.log(CustomerData);
   }
-
-  // displayCartTotal();
-  // last change by abhi
-  // function displayCartTotal() {
   var bagTotal = JSON.parse(localStorage.getItem("cartTotalBag"));
-  // console.log(bagTotal, "test");
   if (bagTotal > 0) {
     var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
     cartCurrentItemShow.setAttribute("class", "desktop-badge desktop-melon");

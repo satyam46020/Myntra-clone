@@ -34,12 +34,10 @@ function showCod(){
     inputDiv.setAttribute("class", "codCardUI-base-helpText");
     div.append(headingDiv, inputDiv);
     
-    var btn = document.createElement("button");
-    btn.setAttribute("class", "placeOrder");
-    btn.innerHTML = placeOrderBtn;
+    var btn = document.querySelector(".placeOrder");
     btn.addEventListener("click", function(){
         event.preventDefault();
-        location = "thankYou.html";
+        location = "thankyou.html";
     });
     form.append(div, btn);
 }
