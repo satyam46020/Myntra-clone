@@ -19,7 +19,7 @@ function displayData(data) {
     data.map(function (elem, index) {
 
         var img = document.createElement("img");
-        img.setAttribute("src", elem.image_url);
+        img.setAttribute("src", elem.image);
 
         var brand = document.createElement("div");
         brand.innerText = elem.brand;

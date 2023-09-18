@@ -12,7 +12,7 @@ body {
   color: #101025;
 }
 .horizontal_container {
-  padding: 1em 1.5em 0;
+  padding: 2em 1.5em 0;
   border-bottom: 1px grey solid;
 }
 .flx-jsp-ac {
@@ -41,9 +41,6 @@ body {
   border: 1px solid grey;
 }
 
-.functionality h4 {
-  /* margin: 1em 0; */
-}
 .functionality {
   width: 17%;
   height: 100%;

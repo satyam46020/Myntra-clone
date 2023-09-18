@@ -162,9 +162,9 @@ womensData.forEach((val)=>{
     card.setAttribute("class", "product_card");
     image.setAttribute("src",val.img_url);
     name.textContent=val.name;
-    price.textContent=`Rs.${val.price}`;
+    price.textContent=`₹ ${val.price}`;
     brand.textContent=val.brand;
-    strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+    strikePrice.textContent=`₹ ${Math.round(val.price + val.price*(val.discount/100))}`;
     discount.textContent=`(${val.discount} % OFF)`;
     
     priceDiv.append(price,strikePrice,discount);
@@ -388,9 +388,9 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
       card.setAttribute("class", "product_card");
       image.setAttribute("src",val.img_url);
       name.textContent=val.name;
-      price.textContent=`Rs.${val.price}`;
+      price.textContent=`₹ ${val.price}`;
       brand.textContent=val.brand;
-      strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+      strikePrice.textContent=`₹ ${Math.round(val.price + val.price*(val.discount/100))}`;
       discount.textContent=`(${val.discount} % OFF)`;
       
       priceDiv.append(price,strikePrice,discount);
@@ -439,10 +439,7 @@ function addingToCart(val,a){
     gender: val.gender,
     discription: val.discription,
     strikedOffPrice:Math.round(val.price + val.price*(val.discount/100)), 
-    quantity: 1,
-    
 
-     // Initialize quantity to 1 for new items
   };
   
   items.push(currFav);
@@ -469,5 +466,18 @@ count.textContent=`${womensData.length} items`;
 function setDetails(a){
 localStorage.setItem("details",JSON.stringify(a));
 window.location.assign("./dummyDetails.html")
+}
+displayCartTotal();
+// last change by abhi
+function displayCartTotal() {
+  localStorage.setItem("cartTotalBag", JSON.stringify(McartArr.length));
+  var addressTotalObj = JSON.parse(localStorage.getItem("cartTotalBag"));
+  var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
+  if (addressTotalObj > 0) {
+    cartCurrentItemShow.setAttribute("class", "desktop-badge desktop-melon");
+    document.getElementById("cartCurrentItemShow").innerText = addressTotalObj;
+
+    localStorage.setItem("cartTotalBag", JSON.stringify(addressTotalObj));
+  }
 }
   

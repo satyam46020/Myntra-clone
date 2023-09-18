@@ -271,9 +271,9 @@ mensData.forEach((val)=>{
   card.setAttribute("class", "product_card");
   image.setAttribute("src",val.img_url);
   name.textContent=val.name;
-  price.textContent=`Rs.${val.price}`;
+  price.textContent=`₹ ${val.price}`;
   brand.textContent=val.brand;
-  strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+  strikePrice.textContent=`₹ ${Math.round(val.price + val.price*(val.discount/100))}`;
   discount.textContent=`(${val.discount} % OFF)`;
   
   priceDiv.append(price,strikePrice,discount);
@@ -518,9 +518,9 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
     card.setAttribute("class", "product_card");
     image.setAttribute("src",val.img_url);
     name.textContent=val.name;
-    price.textContent=`Rs.${val.price}`;
+    price.textContent=`₹ ${val.price}`;
     brand.textContent=val.brand;
-    strikePrice.textContent=`Rs. ${Math.round(val.price + val.price*(val.discount/100))}`;
+    strikePrice.textContent=`₹ ${Math.round(val.price + val.price*(val.discount/100))}`;
     discount.textContent=`(${val.discount} % OFF)`;
     
     priceDiv.append(price,strikePrice,discount);
@@ -577,5 +577,16 @@ function addingToCart(val,a){
    localStorage.setItem("cartData", JSON.stringify(items));
    console.log("items")
 }
+displayCartTotal();
+function displayCartTotal() {
+  localStorage.setItem("cartTotalBag", JSON.stringify(McartArr.length));
+  var addressTotalObj = JSON.parse(localStorage.getItem("cartTotalBag"));
+  var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
+  if (addressTotalObj > 0) {
+    cartCurrentItemShow.setAttribute("class", "desktop-badge desktop-melon");
+    document.getElementById("cartCurrentItemShow").innerText = addressTotalObj;
 
+    localStorage.setItem("cartTotalBag", JSON.stringify(addressTotalObj));
+  }
+}
 
