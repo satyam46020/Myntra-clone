@@ -20,7 +20,7 @@
 }
 .menu-bar ul li {
   justify-content: center;
-  width: 80px;
+  width: 40px;
   margin: 15px;
   padding: 15px;
   margin-right: 0%;
@@ -99,15 +99,11 @@ ul > li:nth-child(5) {
   width: max-content;
   display: flex;
   flex-direction: column;
-  /* box-sizing: border-box; */
-  /* border: 1px solid teal; */
-  /* float: left; */
 }
 .pro > img {
+  width: 23px;
   height: 20px;
-  width: 20px;
-
-  /* */
+  padding-bottom: 5px;
 }
 #Profile-Div {
   display: flex;
@@ -118,16 +114,13 @@ ul > li:nth-child(5) {
 }
 
 .pro > span {
-  /* border: 2px solid crimson; */
-  margin-left: 45px;
+  margin-left: 0px;
 }
 #bag {
   margin-left: 52px;
 }
 .icon {
   padding-left: 25px;
-  background: url("file:///C:/Users/Admin/Downloads/search_FILL0_wght400_GRAD0_opsz48.svg")
-  no-repeat left;
   background-size: 20px;
   height: 35px;
   border: none;
@@ -157,4 +150,8 @@ font-size:xx-small ;
 .menHover3:hover .sub-menu-1,
 .menHover4:hover .sub-menu-1 {
   display: block;
+}
+.class1{
+  font-size: 14px;
+  font-weight: 700;
 }
