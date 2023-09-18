@@ -37,11 +37,7 @@ function formfn(e) {
         }
     }
 }
-var CustomerName =localStorage.getItem("ProfileName") || "";
-if (CustomerName!="") {
-    document.getElementById("logbtn").innerText = CustomerName;
 
-}
 var signup = document.querySelector(".signup").addEventListener("click", signupfn)
 
 function signupfn() {

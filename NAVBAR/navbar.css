@@ -1,25 +1,4 @@
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-} */
-/* body {
-  background-size: cover;
-  background-position: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  background-color: rgb(211, 211, 211);
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.3px;
-  font-weight: 500;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-} */
 .menu-bar {
-  /* background: white;
-  text-align: center;
-  display: inline; */
   position: fixed;
   top: 0;
   right: 0;
@@ -113,15 +92,10 @@ ul > li:nth-child(5) {
   width: max-content;
   display: flex;
   flex-direction: column;
-  /* box-sizing: border-box; */
-  /* border: 1px solid teal; */
-  /* float: left; */
 }
 .pro > img {
   height: 20px;
   width: 20px;
-
-  /* */
 }
 #Profile-Div {
   display: flex;
@@ -132,7 +106,6 @@ ul > li:nth-child(5) {
 }
 
 .pro > span {
-  /* border: 2px solid crimson; */
   margin-left: 45px;
 }
 #bag {

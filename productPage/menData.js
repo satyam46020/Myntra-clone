@@ -231,11 +231,7 @@ let mensData=[
 
 }
  ]
-
- //copying data as dummy
 let data=[...mensData]
-
-//intial render
 mensData.forEach((val)=>{
   const card=document.createElement("div");
   const image=document.createElement("img");
@@ -247,7 +243,6 @@ mensData.forEach((val)=>{
   const discount=document.createElement("span");
   const AddToCart=document.createElement("button");
 
-  //Routing and setting data for details page
   image.addEventListener("click",function(){
     setDetails(val);
   })
@@ -261,11 +256,9 @@ mensData.forEach((val)=>{
   image.classList.add("prod_img");
   AddToCart.textContent="Add To Cart";
   AddToCart.classList.add("btns");
-
-  //Add to cart function call
   AddToCart.addEventListener("click",function(){
     addingToCart(val,this);
-
+    displayCartTotal();
   })
   btnDiv.append(AddToCart);
   card.setAttribute("class", "product_card");
@@ -285,7 +278,8 @@ mensData.forEach((val)=>{
   filterCollar(val,container,card);
   filterBrand(val,container,card);
   filterCategory(val,container,card);
-  console.log(val.discount)
+  
+  // displayCartTotal();
 
 });
 function ckChange(ckType) {
@@ -372,14 +366,12 @@ function filterColor(val,container,card){
         checkbox.addEventListener('change', function(){
         selectedColor=checkbox.value;
 
-        // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.color.toLowerCase()){
           container.append(card);
         }
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
 
         }
         else {
@@ -396,16 +388,12 @@ function filterCollar(val,container,card){
         checkBoxClr.forEach(checkbox => {
         checkbox.addEventListener('change', function(){
         selectedColor=checkbox.value;
-
-        // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.neck.toLowerCase()){
           container.append(card);
         }
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
-
         }
         else {
             container.removeChild(card);
@@ -422,15 +410,12 @@ function filterBrand(val,container,card){
         checkbox.addEventListener('change', function(){
         selectedColor=checkbox.value;
 
-        // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.brand.toLowerCase()){
           container.append(card);
         }
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
-
         }
         else {
             container.removeChild(card);
@@ -446,15 +431,12 @@ function filterCategory(val,container,card){
         checkBoxClr.forEach(checkbox => {
         checkbox.addEventListener('change', function(){
         selectedColor=checkbox.value;
-
-        // console.log(selectedColor);
         if(checkbox.checked && selectedColor.toLowerCase()==val.category.toLowerCase()){
           container.append(card);
         }
         else if(!checkbox.checked){
             console.log("Please select a color");
             container.append(card);
-            // checkBoxClr.setAttribute.disabled=false;
 
         }
         else {
@@ -478,7 +460,6 @@ function sortByLowToHigh(a, b) {
 
 sortDropdown.addEventListener('change', function displaySortedProducts() {
   const container=document.querySelector(".product_container");
-// const product_card=document.querySelector(".product_card");
 
   const sort = document.getElementById('sort');
   const sortValue = sort.value;
@@ -503,7 +484,6 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
     const price=document.createElement("span");
     const strikePrice=document.createElement("span");
     const discount=document.createElement("span");
-    // const wishList=document.createElement("button");
     const AddToCart=document.createElement("button");
 
     const btnDiv=document.createElement("div");
@@ -512,8 +492,6 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
 
     AddToCart.textContent="Add To Cart";
     AddToCart.classList.add("btns");
-    // wishList.textContent="Wish List";
-    // wishList.classList.add("btns");
     btnDiv.append(AddToCart);
     card.setAttribute("class", "product_card");
     image.setAttribute("src",val.img_url);
@@ -532,25 +510,18 @@ sortDropdown.addEventListener('change', function displaySortedProducts() {
     filterCollar(val,container,card);
     filterBrand(val,container,card);
     filterCategory(val,container,card);
-    console.log(val.price)
 
 });
-console.log(sortValue);
 });
 
-// const pageDetailsNav = document.querySelector('.product-card');
+
+let items = JSON.parse(localStorage.getItem("cartData")) || [];
 function addingToCart(val,a){
-  // const AddToCart=document.querySelector("button");
- let items = JSON.parse(localStorage.getItem("cartData")) || [];
- const existingItem = items.find(item => item.name === val.name);
+  const existingItem = items.find(item => item.name === val.name);
  if (existingItem) {
   existingItem.quantity = (existingItem.quantity || 1) + 1;
-  a.textContent="Added!";
-
-  alert("Added Again!")
  }
  else {
-  // If the product is not in the cart, add it as a new entry with quantity 1
   const currFav = {
     image: val.img_url,
     name: val.name,
@@ -564,22 +535,20 @@ function addingToCart(val,a){
     gender: val.gender,
     discription: val.discription,
     strikedOffPrice:Math.round(val.price + val.price*(val.discount/100)), 
-    quantity: 1, // Initialize quantity to 1 for new items
+    quantity: 1, 
   };
   
   items.push(currFav);
-  a.textContent="Added!";
 
 }
        
 
         a.classList.add("added");
    localStorage.setItem("cartData", JSON.stringify(items));
-   console.log("items")
 }
 displayCartTotal();
 function displayCartTotal() {
-  localStorage.setItem("cartTotalBag", JSON.stringify(McartArr.length));
+  localStorage.setItem("cartTotalBag", JSON.stringify(items.length));
   var addressTotalObj = JSON.parse(localStorage.getItem("cartTotalBag"));
   var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
   if (addressTotalObj > 0) {
