@@ -22,7 +22,7 @@
 <br/>
 <h3>Team Members-</h3>
 <ol>
-li><i><a href="https://www.linkedin.com/in/mridul-katara-a1a625151" target="_blank">Mridul Katara</a></i></li>
+<li><i><a href="https://www.linkedin.com/in/mridul-katara-a1a625151" target="_blank">Mridul Katara</a></i></li>
 <li><i><a href="https://www.linkedin.com/in/satyam-kumar-676631148/" target="_blank">Satyam Kumar</a></i></li>
 <li><i><a href="https://www.linkedin.com/in/rishitamukherjee01/" target="_blank">Rishita Mukherjee</a></i></li>
 <li><i><a href="https://www.linkedin.com/in/bikisingh109/original_referer=" target="_blank">Biki Singh</a></i></li>
