@@ -9,7 +9,7 @@
 <h3>Preview-</h3>
 <ul>
 <li><i>Live Link-<a href="" target="_blank">Click here</a></i></li>
-<li><i>Code Base-<a href="" target="_blank">Click here</a></i></li>
+<li><i>Code Base-<a href="https://github.com/MridulKatara/potent-toothbrush-7925" target="_blank">Click here</a></i></li>
 </ul>
 <br/>
 <h3>Tech Used-</h3>
