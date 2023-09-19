@@ -210,6 +210,7 @@ input:hover {
 #Green {
   background-color: rgb(25, 131, 69);
 }
+
 /* Show the hidden div when hovering over the trigger */
 
 @media all and (min-width: 750px) and (max-width: 1120px) {

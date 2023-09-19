@@ -1,4 +1,4 @@
-/* payment nevbar */
+
 body {
     font-family: Whitney, Helvetica, Arial, sans-serif !important;
     color: #424553;
@@ -11,7 +11,6 @@ div {
 
 #headerUnderline {
     width: 100%;
-    /* border-bottom: 1px solid #F5F5F6; */
     margin-bottom: 30px;
 }
 
@@ -40,9 +39,28 @@ div {
 
 
 /* middle  */
+.thankyou{
+    background-color: white;
+    height: 50px;
+    width: 50%;
+    padding: auto;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    padding-top: 100px;
+}
+#lower{
+    background-color: #ff3f6c;
+    margin: 80px 250px;
+    color: white;
+}
+#upper>h1{
+    color: #03a685;
+}
+.thankyou a{
+    color:#ff3f6c;
+}
 
 .thankyou{
-    background: #f4f4f5;
     min-height: 600px;
 }
 .desktop-base-cardLayout {
@@ -181,13 +199,6 @@ div {
 .continueBtnUnderLine{
     text-decoration: none;
 }
-
-
-
-
-
-
-
 /* footer part */
 
 #footer {
@@ -204,7 +215,6 @@ div {
 }
 
 #footer #footerContentImg img {
-    /* display: inline-block; */
     width: 70px;
     height: 37px;
 }
@@ -215,6 +225,5 @@ div {
     font-weight: 600;
     cursor: pointer;
     font-size: 14px;
-    /* float: right; */
     padding: 10px 0;
 }

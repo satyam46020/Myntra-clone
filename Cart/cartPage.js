@@ -46,20 +46,20 @@ function displayData(data) {
         price.setAttribute("id", "price")
         totalamt += (parseInt(elem.price)) * (parseInt(elem.quantity));
 
-        var strikedoffprice = document.createElement("p");
-        strikedoffprice.innerText = "₹" + elem.strikedoffprice;
-        strikedoffprice.style.textDecoration = "line-through";
-        strikedoffprice.style.color = "#94969f";
-        strikedoffprice.setAttribute("id", "strikedoffprice");
+        var strikedOffPrice = document.createElement("p");
+        strikedOffPrice.innerText = "₹" + elem.strikedOffPrice;
+        strikedOffPrice.style.textDecoration = "line-through";
+        strikedOffPrice.style.color = "#94969f";
+        strikedOffPrice.setAttribute("id", "strikedOffPrice");
 
-        totalmrp += (parseInt(elem.strikedoffprice)) * (parseInt(elem.quantity));
+        totalmrp += (parseInt(elem.strikedOffPrice)) * (parseInt(elem.quantity));
 
         var disc = document.createElement("p");
-        var off = Math.round(((elem.strikedoffprice - elem.price) / elem.strikedoffprice) * 100);
+        var off = Math.round(((elem.strikedOffPrice - elem.price) / elem.strikedOffPrice) * 100);
         disc.innerText = off + "% OFF";
         disc.style.color = "#f16565";
-        totaldisc += parseInt(elem.strikedoffprice - elem.price) * (parseInt(elem.quantity));
-        prizediv.append(price, strikedoffprice, disc);
+        totaldisc += parseInt(elem.strikedOffPrice - elem.price) * (parseInt(elem.quantity));
+        prizediv.append(price, strikedOffPrice, disc);
 
         var delivery = document.createElement("div");
         delivery.innerText = "Express Delivery in 2 Days";
@@ -163,7 +163,7 @@ function displayRightside() {
 function removeRow(index) {
 
     totalamt -= (cartobj[index].price) * (cartobj[index].quantity);
-    totalmrp -= (cartobj[index].strikedoffprice) * (cartobj[index].quantity);
+    totalmrp -= (cartobj[index].strikedOffPrice) * (cartobj[index].quantity);
     totaldisc -= totalmrp - totalamt;
     cartobj[index].quantity = 0;
 
@@ -225,9 +225,9 @@ function multiplyQty(element, num, cartobj, i) {
 
     document.getElementById("price").innerText = price * num;
 
-    var strikedoffprice = parseInt(cartobj[i].strikedoffprice);
+    var strikedOffPrice = parseInt(cartobj[i].strikedOffPrice);
 
-    document.getElementById("strikedoffprice").innerText = strikedoffprice * num;
+    document.getElementById("strikedOffPrice").innerText = strikedOffPrice * num;
     localStorage.setItem("cartData", JSON.stringify(cartobj));
     console.log(totalamt + "totalamtqty");
     displayData(cartobj);

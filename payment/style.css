@@ -193,7 +193,6 @@ h2{
     outline: none;
     border-radius: 6px;
     cursor: pointer;
-    /* color: white; */
 }
 .cart-btn{
     background-color:rgb(246, 124, 124);
@@ -201,7 +200,6 @@ h2{
     width: 290px;
 }
 .wish-btn{
-    /* background-color: #00aeff; */
     width: 250px;
 } 
 .cart-btn:hover{

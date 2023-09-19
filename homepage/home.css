@@ -1,7 +1,6 @@
 /* Image Slider CSS */
 .slider {
     width: 100%;
-    /* height: 500px; */
     overflow: hidden;
     margin-top: 70px;
   }
@@ -148,12 +147,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 40px;
-    /* grid-row-gap: 0;
-      margin-left: 10px;
-      margin-right: 10px;
-      margin-top: 40px; */
-  
-    width: 95%;
     margin: auto;
   }
   
@@ -163,10 +156,6 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-gap: 20px;
-    /* grid-row-gap: 0; */
-    /* margin-left: 10px;
-      margin-right: 10px;
-      margin-top: 40px; */
     width: 98%;
     margin: auto;
   }
@@ -180,8 +169,6 @@
   .img-link-container-10 {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    /* grid-gap: 2px; */
-    /* grid-row-gap: 0; */
     gap: 10px;
     width: 98%;
     margin: auto;
@@ -198,15 +185,6 @@
   
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
   
-  /* body {
-              line-height: 1.5;
-              font-family: "Poppins", sans-serif;
-            }
-            * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-            } */
   .container {
     max-width: 75%;
     margin: auto;
@@ -224,17 +202,14 @@
   }
   
   .footer {
-    /* background-color: #24262b; */
     padding: 70px 0;
   
     background-color: #eee;
-    /* border: 1px solid black; */
   }
   
   .footer-col {
     width: 25%;
     padding: 0 15px;
-    /* border: 1px solid black; */
   }
   
   .footer-col ul li {
@@ -243,7 +218,6 @@
   
   .footer-col h4 {
     font-size: 16px;
-    /* color: #ffffff; */
     text-transform: capitalize;
     margin-bottom: 20px;
     font-weight: 600;
@@ -325,7 +299,6 @@
   @media screen and (max-width: 850px) {
   
     .img-link-container-1,
-    /* .img-link-container-2, */
     .img-link-container-3,
     .img-link-container-4,
     .img-link-container-5,
@@ -350,7 +323,6 @@
   @media screen and (max-width: 600px) {
   
     .img-link-container-1,
-    /* .img-link-container-2, */
     .img-link-container-3,
     .img-link-container-4,
     .img-link-container-5,
