@@ -7,7 +7,6 @@
 }
 body {
   width: 100%;
-  /* height: 100vh; */
   font-family: "Poppins", sans-serif;
   color: #101025;
 }
@@ -69,7 +68,6 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
-  /* max-height: 65%; */
   font-family: "Assistant", sans-serif;
   cursor: pointer;
 }
@@ -90,7 +88,6 @@ body {
   cursor: pointer;
 }
 .product_card {
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   padding: 0.3em;
 }
 .product_card:hover > .hiddenDiv {
@@ -98,7 +95,6 @@ body {
 }
 .product_card > img {
   width: 100%;
-  /* height: 50%; */
 }
 .product_card:hover {
   transform: scale(1.008);
@@ -106,14 +102,6 @@ body {
 .product_card:hover > .prod_img {
   width: 99%;
 }
-/* .product_card * */
-/* img:hover + .hiddenDiv {
-  opacity: 100%;
-} */
-
-/* .product_card p:hover + .hiddenDiv {
-  opacity: 100%;
-} */
 
 .product_card div,
 .colors > div {
@@ -140,18 +128,8 @@ body {
   font-size: 1.1em;
 }
 .ham {
-  /* display: flex; */
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   display: none;
 }
-/* .ham span {
-  width: 25px;
-  height: 5px;
-  margin: 1px 0;
-  background-color: #101025;
-} */
 .product_card span:nth-last-child(2) {
   text-decoration: line-through;
   font-size: 0.9em;
@@ -211,6 +189,83 @@ input:hover {
   background-color: rgb(25, 131, 69);
 }
 
+#bottom {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  font-size: 15px;
+  color: #696b79;
+  gap: 0px 50px;
+}
+#bottom div:nth-child(3) #store img {
+  
+  height: 42px;
+  cursor: pointer;
+}
+#bottom div:nth-child(4) div {
+  display: flex;
+}
+#bottom div:nth-child(3) #socialmedialogo img {
+  width: 28px;
+  height: 20px;
+}
+#popularSearch {
+  width: 75%;
+  margin: auto;
+  cursor: pointer;
+  font-size: 14px;
+  color: #696b79;
+}
+#last {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  justify-content: space-between;
+}
+#last span {
+  color: #526cd0;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+
+
+
+#bottom{
+  cursor: pointer;
+}
+#bottom h5{
+  color: black;
+  margin-bottom: 40px;
+}
+#bottom p{
+  font-size: 14px;
+}
+#bottom >div:nth-child(4){
+  width: 24%;
+  margin-top: 20px;
+  color: black;
+}
+#bottom >div:nth-child(4) span{
+  font-size: 14px;
+}
+#bottom >div:nth-child(4) img{
+  width: 20%;
+  height: 20%;
+  margin-right: 10px;
+}
+#bottom >div:nth-child(4) p{
+   
+  margin: auto;
+
+}
+#bottom p{
+  
+  margin-top: -12px;
+}
+#last p{
+  color:#94969f
+}
 /* Show the hidden div when hovering over the trigger */
 
 @media all and (min-width: 750px) and (max-width: 1120px) {
@@ -268,6 +323,9 @@ input:hover {
     padding: 0.2em;
     font-size: 0.9em;
   }
+  #bottom,#popularSearch,#last{
+    display: none;
+  }
 }
 @media all and (min-width: 450px) and (max-width: 550px) {
   .product_container {
@@ -290,7 +348,6 @@ input:hover {
     justify-content: space-between;
     border-bottom: 1px grey solid;
     padding: 0 1.5em;
-    /* color: grey; */
   }
 
   .functionality {
@@ -299,8 +356,6 @@ input:hover {
     padding: 0.2em;
     font-size: 0.9em;
     display: none;
-    /* visibility: 0; */
-    /* z-index: 10; */
   }
   .ham {
     display: flex;
@@ -309,8 +364,6 @@ input:hover {
     width: 20px;
     height: 20px;
   }
-  /* .ham h3 {
-  } */
   .hamFilter {
     display: block;
     width: 100%;
@@ -318,14 +371,6 @@ input:hover {
     z-index: 1;
     background-color: white;
   }
-  /* 
-
-  .ham :focus + .horizontal_container {
-    /* visibility: 1; */
-  /* position: absolute;
-    top: 10%; */
-  /* background-color: red; */
-  /* } */
   .hiddenDiv {
     opacity: 100%;
   }
@@ -341,6 +386,9 @@ input:hover {
     font-size: 1em;
     border: 1px solid grey;
   }
+  #bottom,#popularSearch,#last{
+    display: none;
+  }
 }
 @media all and (max-width: 450px) {
   .product_container {
@@ -352,10 +400,14 @@ input:hover {
     position: absolute;
     z-index: 0;
   }
+
   .horizontal_container {
     margin: 1em auto;
   }
 
+  #bottom,#popularSearch,#last{
+    display: none;
+  }
   .flx-jsp-ac {
     position: fixed;
     bottom: 0;
@@ -365,7 +417,6 @@ input:hover {
     justify-content: space-between;
     border-bottom: 1px grey solid;
     padding: 0 1.5em;
-    /* color: grey; */
   }
 
   .functionality {
@@ -374,8 +425,6 @@ input:hover {
     padding: 0.2em;
     font-size: 0.9em;
     display: none;
-    /* visibility: 0; */
-    /* z-index: 10; */
   }
   .ham {
     display: flex;
@@ -384,8 +433,6 @@ input:hover {
     width: 20px;
     height: 20px;
   }
-  /* .ham h3 {
-  } */
   .hamFilter {
     display: block;
     width: 100%;
@@ -394,14 +441,6 @@ input:hover {
     z-index: 1;
     background-color: white;
   }
-  /* 
-
-  .ham :focus + .horizontal_container {
-    /* visibility: 1; */
-  /* position: absolute;
-    top: 10%; */
-  /* background-color: red; */
-  /* } */
   .hiddenDiv {
     opacity: 100%;
   }

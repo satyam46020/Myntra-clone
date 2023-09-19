@@ -334,9 +334,6 @@ visibility: visible;
  visibility: visible;
 }
 #last-bag-box img{
-  /* border: 1px solid #000; */
-  /* align-items: center; */
-  /* margin-right: 20px; */
   margin-left: 0px;
 }
 #last-bag-box span{
@@ -440,4 +437,72 @@ visibility: visible;
   /* top: -2px; */
   margin-left: 10px;
   font-weight: 700;
+}
+
+
+
+/* Hamburger Icon */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+}
+
+/* Menu Container */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style your menu items here */
+
+/* Media Query for Mobile */
+@media (max-width: 780px) {
+  .menu-container ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 90%;
+    z-index: 10;
+  }
+
+  .menu-container ul.active {
+    display: flex;
+  }
+
+  .menu-container ul li {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu-container ul li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  .pro{
+    height: fit-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }

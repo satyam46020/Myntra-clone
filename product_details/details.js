@@ -1,6 +1,4 @@
 
-
-////////////////////////////////////////////////////////////////////////
 let getDetails =[];
 getDetails.push(JSON.parse(localStorage.getItem("details")));
 getDetails.forEach(val => {
@@ -31,15 +29,11 @@ getDetails.forEach(val => {
 
     description.textContent=val.description;
     const AddToCart=document.querySelector("#bag");
-//     const qty=document.getElementById("qty");
-//  let qty_value=1;
-//     qty.addEventListener("change",function(){
-//         qty_value=parseInt(qty.value);
-//     })
+
 
     AddToCart.addEventListener("click",function(){
         addingToCart(val,this);
-    
+        // bagtot();
       })
  
     const wishBtn=document.querySelector("#wish");
@@ -49,17 +43,15 @@ getDetails.forEach(val => {
     })
 });
 
+let items = JSON.parse(localStorage.getItem("cartData")) || [];
 function addingToCart(val,a){
     // const AddToCart=document.querySelector("button");
-   let items = JSON.parse(localStorage.getItem("cartData")) || [];
    const existingItem = items.find(item => item.name === val.name);
    if (existingItem) {
     existingItem.quantity = (existingItem.quantity || 1);
   
-    // console.log(item.qty+b);
    }
    else {
-    // If the product is not in the cart, add it as a new entry with quantity 1
     const currFav = {
       image: val.img_url,
       name: val.name,
@@ -78,10 +70,21 @@ function addingToCart(val,a){
     
     items.push(currFav);
     a.textContent="Added!";
-  
+    bagtot();
   }
          
   
      localStorage.setItem("cartData", JSON.stringify(items));
-     console.log("items")
   }
+  bagtot();
+  function bagtot(){
+  localStorage.setItem("cartTotalBag", JSON.stringify(items.length));
+  var bagTotal = JSON.parse(localStorage.getItem("cartTotalBag"));
+  if (bagTotal > 0) {
+    var cartCurrentItemShow = document.getElementById("cartCurrentItemShow");
+    cartCurrentItemShow.setAttribute("class", "desktop-badge desktop-melon");
+    document.getElementById("cartCurrentItemShow").innerText = bagTotal;
+
+    localStorage.setItem("cartTotalBag", JSON.stringify(bagTotal));
+  }
+}

@@ -162,47 +162,36 @@ s {
   height: 20px;
 }
 
-/* .bag-wish div:nth-child(1) {
-  flex: 0 0 calc(50% - 20px);
-  background-color: #fe7f9d;
 
-  color: #fff;
-  margin-right: 20px;
-  padding: 4%;
-  border-radius: 3px;
-} */
-
-/* .bag-wish div:nth-child(2) {
-  flex: 0 0 calc(50% - 20px);
-  border: 1px solid lightgray;
-  padding: 4%;
-  border-radius: 3px;
-  width: 30%;
-} */
 #bag {
   cursor: pointer;
   width: auto;
   height: auto;
+  border: white;
   text-align: center;
-  color: #000;
+  color: white;
   background-color: #fe7f9d;
   margin-right: 20px;
-  padding: 4%;
+  padding: 2%;
   border-radius: 3px; /* Set the color to black or the desired color */
+  font-size: larger;
 }
 #wish {
   cursor: pointer;
   width: auto;
+  box-shadow:0px 0px 5px ;
   height: auto;
   text-align: center;
-  color: #000;
+  color: #fe7f9d;
   background-color: white;
   margin-right: 20px;
-  padding: 4%;
+  padding: 2%;
+  font-size: larger;
   border-radius: 3px;
+  border: white;
 }
 #bag:hover {
-  background-color: rgb(254, 176, 189);
+  background-color: rgb(255, 63, 108);;
   transition: 0.3s;
 }
 
@@ -301,6 +290,87 @@ s {
 
 .product-details b {
   font-weight: bold;
+}
+
+#bottom{
+  cursor: pointer;
+}
+#bottom h5{
+  /* border: 2px solid teal; */
+  color: black;
+  margin-bottom: 40px;
+}
+#bottom p{
+  font-size: 14px;
+}
+#bottom >div:nth-child(4){
+  /* border: 2px solid teal; */
+  width: 24%;
+  margin-top: 20px;
+  color: black;
+}
+#bottom >div:nth-child(4) span{
+  /* border: 2px solid teal; */
+  font-size: 14px;
+}
+#bottom >div:nth-child(4) img{
+  /* border: 2px solid teal; */
+  width: 20%;
+  height: 20%;
+  margin-right: 10px;
+}
+#bottom >div:nth-child(4) p{
+   
+  margin: auto;
+
+}
+#bottom p{
+  
+  margin-top: -12px;
+}
+#last p{
+  color:#94969f
+}
+#bottom {
+  /* border: 2px solid teal; */
+  display: flex;
+  /* justify-content: space-between; */
+  width: 75%;
+  margin: auto;
+  font-size: 15px;
+  color: #696b79;
+  gap: 0px 50px;
+}
+#bottom div:nth-child(3) #store img {
+  
+  height: 42px;
+  cursor: pointer;
+}
+#bottom div:nth-child(4) div {
+  display: flex;
+}
+#bottom div:nth-child(3) #socialmedialogo img {
+  width: 28px;
+  height: 20px;
+  /* border: 1px solid black; */
+}
+#popularSearch {
+  width: 75%;
+  margin: auto;
+  cursor: pointer;
+  font-size: 14px;
+  color: #696b79;
+}
+#last {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  justify-content: space-between;
+}
+#last span {
+  color: #526cd0;
+  font-size: 17px;
+  font-weight: 900;
 }
 
 @media all and (max-width: 500px) {
