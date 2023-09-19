@@ -276,36 +276,8 @@ input:hover {
     gap: 1em;
     padding: 1em;
   }
-  .functionality {
-    width: 35%;
-    height: 100%;
-    padding: 0.2em;
-    font-size: 0.9em;
-    display: none;
-  }
-  /* .ham {
-    display: flex;
-  } */
-  .ham :hover + .functionality {
-    display: flex;
-  }
-  #select_opt {
-    display: none;
-  }
-}
-@media all and (max-width: 450px) {
-  .product_container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 3em;
-    padding: 1.5em;
-    position: absolute;
-    z-index: 0;
-  }
   .horizontal_container {
-    padding: 0;
-    /* color: grey; */
+    margin: 1em auto;
   }
 
   .flx-jsp-ac {
@@ -341,6 +313,82 @@ input:hover {
   .hamFilter {
     display: block;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+  }
+  /* 
+
+  .ham :focus + .horizontal_container {
+    /* visibility: 1; */
+  /* position: absolute;
+    top: 10%; */
+  /* background-color: red; */
+  /* } */
+  .hiddenDiv {
+    opacity: 100%;
+  }
+  .flx-jsp-ac > h3 {
+    display: none;
+  }
+  #select_opt {
+    display: none;
+  }
+  #sort {
+    padding: 0.3em 0.3em;
+    margin: 0.5em 0;
+    font-size: 1em;
+    border: 1px solid grey;
+  }
+}
+@media all and (max-width: 450px) {
+  .product_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3em;
+    padding: 1.5em;
+    position: absolute;
+    z-index: 0;
+  }
+  .horizontal_container {
+    margin: 1em auto;
+  }
+
+  .flx-jsp-ac {
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    border-bottom: 1px grey solid;
+    padding: 0 1.5em;
+    /* color: grey; */
+  }
+
+  .functionality {
+    width: 35%;
+    height: 100%;
+    padding: 0.2em;
+    font-size: 0.9em;
+    display: none;
+    /* visibility: 0; */
+    /* z-index: 10; */
+  }
+  .ham {
+    display: flex;
+  }
+  .ham img {
+    width: 20px;
+    height: 20px;
+  }
+  /* .ham h3 {
+  } */
+  .hamFilter {
+    display: block;
+    width: 100%;
+    height: 100vh;
     position: relative;
     z-index: 1;
     background-color: white;

@@ -1,141 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details Page</title>
-    <link rel="stylesheet" href="../payment/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../payment/style.css" />
+    <link rel="stylesheet" href="./details.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
     <nav>
-        <div class="logo">Myntra</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Offers</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <i class="fas fa-shopping-cart"></i>
-        </ul>
+      <div class="logo">Myntra</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <i class="fas fa-shopping-cart"></i>
+      </ul>
     </nav>
 
     <div class="flex-box">
-        <div class="left">
-            <div class="big-img">
-                <img src="img/p1.png">
-            </div>
-            <div class="images">
-                <div class="small-img">
-                    <img src="img/p1.png" onclick="showImg(this.src)">
-                </div>
-                <div class="small-img">
-                    <img src="img/p2.png" onclick="showImg(this.src)">
-                </div>
-                <div class="small-img">
-                    <img src="img/p3.png" onclick="showImg(this.src)">
-                </div>
-                <div class="small-img">
-                    <img src="img/p4.png" onclick="showImg(this.src)">
-                </div>
-            </div>
+      <div class="left">
+        <div class="big-img">
+          <img class="big-pic" src="img/p1.png" />
+        </div>
+        <div class="images">
+          <div class="small-img">
+            <img class="big-pic" onclick="showImg(this.src)" />
+          </div>
+          <div class="small-img">
+            <img class="small-pic" onclick="showImg(this.src)" />
+          </div>
+          <div class="small-img">
+            <img class="small-pic" onclick="showImg(this.src)" />
+          </div>
+          <div class="small-img">
+            <img class="small-pic" onclick="showImg(this.src)" />
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="url">
+          Home/Clothing/Women Clothing/Louis Philippe Jeans>More By Louis
+          Philippe Jeans
+        </div>
+        <div class="pname" id="title">Louis Philippe Jeans</div>
+        <div class="pname" id="small-description">
+          Polo Collar Pure Cotton With Chest Pocket Slim Fit T-shirt
+        </div>
+        <div class="ratings">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="price">
+          <p class="cost">₹884</p>
+          <del>MRP ₹1499</del>
+          <p class="off">(41% OFF)</p>
+          <div class="price-details">
+            <h2>Price Details</h2>
+            <ul>
+              <li class="fpt">
+                Maximum Retail Price: Rs. 1499 (Incl. of all taxes)
+              </li>
+              <li class="Spt">Discount: 41% OFF</li>
+              <li class="Thpt">Selling Price: Rs. 884 (Incl. of all taxes)</li>
+            </ul>
+          </div>
+          <div class="material-care">
+            <h2>Material & Care</h2>
+            <ul>
+              <li class="fabric">100% Cotton</li>
+              <li>Machine Wash</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="right">
-            <div class="url">Home/Clothing/Women Clothing/Louis Philippe Jeans>More By Louis Philippe Jeans</div>
-            <div class="pname">Louis Philippe Jeans</div>
-            <div class="pname">Polo Collar Pure Cotton With Chest Pocket Slim Fit T-shirt</div>
-            <div class="ratings">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <div class="price">
-                <p class="cost">₹884</p> <del>MRP ₹1499</del><p class="off">(41% OFF)</p>
-                <div class="price-details">
-                    <h2>Price Details</h2>
-                    <ul>
-                        <li>Maximum Retail Price: Rs. 1499 (Incl. of all taxes)</li>
-                        <li>Discount: 41% OFF</li>
-                        <li>Selling Price: Rs. 884 (Incl. of all taxes)</li>
-                        
-                    </ul>
-                </div>
-                <div class="material-care">
-                    <h2>Material & Care</h2>
-                    <ul>
-                        <li>100% Cotton</li>
-                        <li>Machine Wash</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="size">
-                <p>Select Size :</p>
-                <div class="psize active">M</div>
-                <div class="psize">L</div>
-                <div class="psize">XL</div>
-                <div class="psize">XXL</div>
-            </div>
-            <div class="quantity">
-                <p>Quantity :</p>
-                <input type="number" min="1" max="5" value="1">
-            </div>
-            <div class="btn-box">
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-bag"></i> Add to Cart
-                </button>
-                <button class="wish-btn">
-                    <i class="fas fa-heart"></i> Wishlist
-                </button>
-            </div>
-            
-            
-            <!-- Product Details -->
-            <div class="product-details">
-                <h2>Product Details</h2>
-                <ul>
-                    <li>Black T-shirt for men</li>
-                    <li>Solid</li>
-                    <li>Regular length</li>
-                    <li>Polo collar</li>
-                    <li>1 Pocket</li>
-                    <li>Short, regular sleeves</li>
-                    <li>Knitted pure cotton fabric</li>
-                    <li>Button closure</li>
-                </ul>
-            </div>
-            
-            <!-- Size & Fit -->
-            <div class="size-fit">
-                <h2>Size & Fit</h2>
-                <ul>
-                    <li>Slim Fit</li>
-                    <li>Size worn by the model: M</li>
-                    <li>Chest: 39"</li>
-                    <li>Height: 6'</li>
-                </ul>
-            </div>
-            
-            <!-- Material & Care -->
-            <div class="material-care">
-                <h2>Material & Care</h2>
-                <ul>
-                    <li>100% Cotton</li>
-                    <li>Machine Wash</li>
-                </ul>
-            </div>
+        <div class="size">
+          <p>Select Size :</p>
+          <div class="psize active">M</div>
+          <div class="psize">L</div>
+          <div class="psize">XL</div>
+          <div class="psize">XXL</div>
         </div>
+        <div class="quantity">
+          <p>Quantity :</p>
+          <input type="number" id="qty" min="1" max="5" value="1" />
+        </div>
+        <div class="btn-box">
+          <button class="cart-btn">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+          <button class="wish-btn">
+            <i class="fas fa-heart"></i> Wishlist
+          </button>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+          <h2>Product Details</h2>
+          <p class="product-detailsP"></p>
+        </div>
+
+        <!-- Size & Fit -->
+        <div class="size-fit">
+          <h2>Size & Fit</h2>
+          <ul>
+            <li>Slim Fit</li>
+            <li>Size worn by the model: M</li>
+            <li>Chest: 39"</li>
+            <li>Height: 6'</li>
+          </ul>
+        </div>
+
+        <!-- Material & Care -->
+        <div class="material-care">
+          <h2>Material & Care</h2>
+          <ul>
+            <li>100% Cotton</li>
+            <li>Machine Wash</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
+    <script src="./details.js"></script>
     <script>
-        let bigImg = document.querySelector('.big-img img');
-        function showImg(pic){
-            bigImg.src = pic;
-        }
+      let bigImg = document.querySelector(".big-img img");
+      function showImg(pic) {
+        bigImg.src = pic;
+      }
     </script>
-</body>
+  </body>
 </html>

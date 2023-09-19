@@ -16,6 +16,7 @@ let mensData=[
         brand:"DILLINGER",
         fabric:"100% cotton",
         discount:38,
+        xtraImg:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/6609398/2019/1/30/47551e03-18cc-4755-bdbb-5c501447ecbd1548843950822-DILLINGER-Men-Grey-Printed-Round-Neck-T-shirt-71015488439477-4.jpg",
         },
         {
             name:"Men Polo Collar T-shirt",
@@ -29,6 +30,7 @@ let mensData=[
             brand:"U.S. Polo Assn.",
             fabric:"100% cotton",
             discount:20,
+            xtraImg:"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2365526/2018/2/9/11518169271821-US-Polo-Assn-Orange-Solid-Polo-T-shirt-4301518169271743-5.jpg"
 
             },
             {
@@ -43,7 +45,7 @@ let mensData=[
                 brand:"ADIDAS",
                 fabric:"cotton",
                 discount:35,
-
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
                 },
             {               
                 name:" White Round Neck T-shirt",
@@ -57,6 +59,8 @@ let mensData=[
                 brand:"Roadster",
                 fabric:"cotton",
                 discount:18,
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 
 
             },
@@ -72,6 +76,8 @@ let mensData=[
                 brand:"Roadster",
                 fabric:"60% cotton, 40% polyester",
                 discount:5,
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 
             },
 {            name:"Men Blue Polo T-shirt",
@@ -85,6 +91,8 @@ let mensData=[
                 brand:"U.S. Polo Assn.",
                 fabric:"100% cotton",
                 discount:10,
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 },
 {
     name:"Jeans Men White T-shirt",
@@ -98,6 +106,8 @@ let mensData=[
                 brand:"U.S. Polo Assn.",
                 fabric:"100% cotton",
                 discount:12,
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 },
 {
     name:"Allen Solly Solid T-shirt",
@@ -111,6 +121,8 @@ let mensData=[
     brand:"Allen Solly",
     fabric:"100% polyester",
     discount:15,
+    xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 },
 {
     name:"Lacoste Blue T-shirt",
@@ -125,6 +137,8 @@ let mensData=[
     brand:"Lacoste",
     fabric:"100% Cotton",
     discount:5,
+    xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 
 },
 {
@@ -139,6 +153,8 @@ let mensData=[
     brand:"Levis",
     fabric:"70% Cotton 30% Mix-blend",
     discount:14,
+    xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 
 },
 
@@ -153,7 +169,8 @@ let mensData=[
     fabric:"70% Cotton 30% Mix-blend",
     discount:40,
     neck:"Collar",
-    description:"Peter England Men Shirt Tailored Fit Self Design Formal Shirt,"
+    description:"Peter England Men Shirt Tailored Fit Self Design Formal Shirt",
+    xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
 
 },
 {
@@ -168,6 +185,7 @@ let mensData=[
     discount:16,
     neck:"Collar",
     description:"Peter England Men Purple Shirt Self Design Formal Shirt,  Louis Philippe,formal-shirts",
+    xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
 
 
 },
@@ -184,6 +202,8 @@ let mensData=[
   discount:10,
   neck:"Collar",
   description:"Canary London Men Peach Coloured & Blue Regular Fit Checked Formal Shirt",
+  xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 },
 {
   name:"Louis Philippe Men Grey Shirt",
@@ -198,6 +218,8 @@ let mensData=[
   discount:13,
   neck:"Collar",
   description:"Louis Philippe Men Grey Slim Fit Self Design Formal Shirt,  Louis Philippe,formal-shirts",
+  xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
+
 
 
 },{
@@ -213,6 +235,7 @@ let mensData=[
   discount:27,
   neck:"Collar",
   description:"U.S. Polo Assn. Men Grey Slim Fit Solid Formal Shirt,  U.S. Polo Assn., Shirts, Topwear, Apparel, ",
+  xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
 
 },
 {
@@ -228,6 +251,7 @@ let mensData=[
   neck:"Collar",
   description:"Allen Solly Men Navy Blue & Turquoise Blue Slim Fit Printed Casual Shirt",
   img_url:"https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/6598421/2018/5/31/28dd5425-61a0-41f2-8121-8f967a0441e61527749762763-a-3401527749762598-1.jpg",
+                xtraImg:"https://img1.cgtrader.com/items/90545/c839443ba4/rigged-dummy-man-3d-model-rigged-max.jpg"
 
 }
  ]
@@ -361,7 +385,7 @@ menu.addEventListener("click",function() {
 })
 function setDetails(a){
 localStorage.setItem("details",JSON.stringify(a));
-window.location.assign("./dummyDetails.html")
+window.location.assign("../product_details/details.html");
 }
 
 

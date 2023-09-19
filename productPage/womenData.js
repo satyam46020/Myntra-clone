@@ -465,7 +465,7 @@ count.textContent=`${womensData.length} items`;
 
 function setDetails(a){
 localStorage.setItem("details",JSON.stringify(a));
-window.location.assign("./dummyDetails.html")
+window.location.assign("../product_details/details.html");
 }
 displayCartTotal();
 // last change by abhi
