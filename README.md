@@ -8,7 +8,7 @@
 <br/>
 <h3>Preview-</h3>
 <ul>
-<li><i>Live Link-<a href="" target="_blank">Click here</a></i></li>
+<li><i>Live Link-<a href="https://650b2f84de1078243d876e0c--effervescent-tulumba-71b6b7.netlify.app/" target="_blank">Click here</a></i></li>
 <li><i>Code Base-<a href="https://github.com/MridulKatara/potent-toothbrush-7925" target="_blank">Click here</a></i></li>
 </ul>
 <br/>
