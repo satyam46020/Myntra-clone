@@ -20,7 +20,7 @@ function formfn(e) {
                 var h5 = document.querySelector("h5")
                 localStorage.setItem("ProfileName", e.name)
                 
-                window.location="../homepage/index.html"
+                window.location="../index.html"
                 flag = 1;
                 return
             }
