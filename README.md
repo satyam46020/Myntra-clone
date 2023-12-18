@@ -3,7 +3,7 @@
 
 <h1>Myntra Clone construct week project</h1>
 <h3>Description</h3>
-<p><b>This is a collaborative project. Build using HTML, CSS, JS along with a team of 4 members in 7 days. </b></p>
+<p><b>Myntra is a stylish and user-centric e-commerce platform that brings the latest fashion trends to your fingertips. This Myntra clone website is designed to offer a seamless and enjoyable online shopping experience. </b></p>
 <div><img src="./image-navbar/logo.png" height="300px" width="500px" alt=""></img></div>
 <br/>
 <h3>Preview-</h3>
